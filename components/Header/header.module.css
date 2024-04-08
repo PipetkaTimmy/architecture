@@ -1,0 +1,35 @@
+.header {
+    background-color: #262626;
+}
+
+.header img {
+    width: 80px;
+    height: 70px;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 25vh;
+    margin-bottom: 44px;
+}
+
+
+
+.addText {
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 300;
+    max-width: 530px;
+}
+
+.headerButton {
+    font-size: 16px;
+    background: #fff;
+    color: #262626;
+    border-radius: 0 12px 0 12px;
+    max-width: 290px;
+    padding: 30px 32px;
+    font-weight: 800;
+}
