@@ -1,16 +1,29 @@
-import React from 'react'
-import styles from './licenses.module.css'
+import React, { useState } from 'react'
+import styles from './licenses.module.css';
+import { useDisclosure, Button } from "@nextui-org/react";
+import ModalComponent from './Modal';
+
 
 const Licenses = () => {
+    const [selectedImage, setSelectedImage] = useState();
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [backdrop, setBackdrop] = React.useState('blur')
+
+    const handleImageClick = (imageSrc) => {
+        setSelectedImage(imageSrc);
+        onOpen();
+    }
+
     return (
-        <section className='container'>
+        <section className='container' id='licenses'>
             <h1 className='title colorBlack'>Лицензии</h1>
             <div className={styles.licensesContainer}>
-                <img src="/license_img/1.png" alt="" />
-                <img src="/license_img/2.png" alt="" />
-                <img src="/license_img/3.png" alt="" />
-                <img src="/license_img/4.png" alt="" />
+                <Button className={styles.imgButton}><img src="/license_img/1.png" alt="" onClick={() => handleImageClick('/license_img/1.png')} /></Button>
+                <Button className={styles.imgButton}><img src="/license_img/2.png" alt="" onClick={() => handleImageClick('/license_img/2.png')} /></Button>
+                <Button className={styles.imgButton}><img src="/license_img/3.png" alt="" onClick={() => handleImageClick('/license_img/3.png')} /></Button>
+                <Button className={styles.imgButton}><img src="/license_img/4.png" alt="" onClick={() => handleImageClick('/license_img/4.png')} /></Button>
             </div>
+            <ModalComponent backdrop={backdrop} isOpen={isOpen} onClose={onClose} selectedImage={selectedImage} />
         </section>
     )
 }

@@ -1,4 +1,9 @@
-.licensesContainer{
+.licensesContainer {
     display: flex;
     justify-content: space-between;
+}
+.imgButton {
+    height: max-content;
+    padding: 0;
+    margin: 0;
 }

@@ -16,6 +16,10 @@
   }
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
 }
@@ -26,7 +30,23 @@ body {
   }
 }
 
-main{
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 30px 64px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  gap: 32px;
+  font-size: 18px;
+  color: #fff;
+}
+
+main {
   background-color: #F5F5F5;
 }
 
@@ -43,11 +63,15 @@ main{
   font-weight: 700;
 }
 
-.colorBlack{
+.colorBlack {
   color: #101010;
   max-width: 700px;
 }
 
-.bgBlack{
+.bgBlack {
   background-color: #262626;
+}
+
+.text-white {
+  color: #fff;
 }

@@ -1,0 +1,165 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/Header/header.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.header_header__us6ao {
+    /* background-color: #262626; */
+    background: url(/main.png) no-repeat;
+}
+
+.header_header__us6ao img {
+    width: 80px;
+    height: 70px;
+}
+
+.header_headerText__9OzE_ {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 25vh;
+    margin-bottom: 44px;
+}
+
+
+
+.header_addText__IoqCN {
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 300;
+    max-width: 530px;
+}
+
+.header_headerButton__eE02O {
+    font-size: 16px;
+    background: #fff;
+    color: #262626;
+    border-radius: 0 12px 0 12px;
+    max-width: 290px;
+    padding: 30px 32px;
+    font-weight: 800;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/Services/services.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.services_servicesContainer__5JEJZ {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 56px;
+}
+
+.services_serviceBlock__9HgHk {
+    padding: 32px;
+    background-color: #262626;
+    height: 340px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.services_serviceBlockTitle__Ufro6 {
+    color: #fff;
+    font-size: 32px;
+    line-height: normal;
+    font-weight: 700;
+    max-width: 300px;
+}
+
+.services_paralaxImg__t6Yo2{
+    position: absolute;
+    right: 0;
+}
+
+.services_addText__2q2j5 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 350px;
+    align-items: center;
+    color: #ffffff60;
+}
+
+.services_serviceBlock__9HgHk:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 3;
+    /* background-image: url(/services_img/1.png); */
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.services_serviceBlock__9HgHk:nth-child(2) {
+    grid-area: 1 / 3 / 2 / 6;
+    background-image: url(/services_img/2.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.services_serviceBlock__9HgHk:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 4;
+    background-image: url(/services_img/3.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.services_serviceBlock__9HgHk:nth-child(4) {
+    grid-area: 2 / 4 / 3 / 6;
+    background-image: url(/services_img/4.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.services_serviceBlock__9HgHk:nth-child(5) {
+    grid-area: 3 / 1 / 4 / 3;
+    background-image: url(/services_img/5.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.services_serviceBlock__9HgHk:nth-child(6) {
+    grid-area: 3 / 3 / 4 / 6;
+    background-image: url(/services_img/6.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.services_serviceBlock__9HgHk:nth-child(7) {
+    grid-area: 4 / 1 / 5 / 4;
+    background-image: url(/services_img/7.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.services_serviceBlock__9HgHk:nth-child(8) {
+    grid-area: 4 / 4 / 5 / 6;
+    background: transparent;
+    border: 1px solid #101010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/Licenses/licenses.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.licenses_licensesContainer__zj0w9 {
+    display: flex;
+    justify-content: space-between;
+}
+.licenses_imgButton__7XHnG {
+    height: -moz-max-content;
+    height: max-content;
+    padding: 0;
+    margin: 0;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./components/Footer/footer.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.footer_footer__unmqs{
+    width: 100%;
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #101010;
+    border-top: 1px solid #2626264D;
+    margin-top: 100px;
+}

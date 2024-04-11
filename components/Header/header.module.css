@@ -1,5 +1,6 @@
 .header {
-    background-color: #262626;
+    /* background-color: #262626; */
+    background: url(/main.png) no-repeat;
 }
 
 .header img {

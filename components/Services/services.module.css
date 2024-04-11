@@ -16,6 +16,8 @@
     justify-content: space-between;
     grid-column: 1;
     grid-row: 1;
+    position: relative;
+    overflow: hidden;
 }
 
 .serviceBlockTitle {
@@ -24,6 +26,11 @@
     line-height: normal;
     font-weight: 700;
     max-width: 300px;
+}
+
+.paralaxImg{
+    position: absolute;
+    right: 0;
 }
 
 .addText {
@@ -37,7 +44,7 @@
 
 .serviceBlock:nth-child(1) {
     grid-area: 1 / 1 / 2 / 3;
-    background-image: url(/services_img/1.png);
+    /* background-image: url(/services_img/1.png); */
     background-repeat: no-repeat;
     background-position: right;
 }
@@ -76,4 +83,14 @@
     background-image: url(/services_img/7.png);
     background-repeat: no-repeat;
     background-position: right;
+}
+.serviceBlock:nth-child(8) {
+    grid-area: 4 / 4 / 5 / 6;
+    background: transparent;
+    border: 1px solid #101010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
 }
