@@ -1,6 +1,9 @@
 .header {
-    /* background-color: #262626; */
     background: url(/main.png) no-repeat;
+    margin: 20px;
+    border-radius: 20px;
+    background-position: center;
+    position: relative
 }
 
 .header img {
@@ -22,7 +25,7 @@
     font-size: 20px;
     line-height: normal;
     font-weight: 300;
-    max-width: 530px;
+    max-width: 460px;
 }
 
 .headerButton {
@@ -33,4 +36,37 @@
     max-width: 290px;
     padding: 30px 32px;
     font-weight: 800;
+}
+
+.hoverLink {
+    transition: all .3s;
+}
+
+.hoverLink:hover {
+    transition: all .3s;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.marker {
+    padding: 8px 31px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 136px;
+}
+
+@media (max-width:901px) {
+    .header {
+        margin: 0;
+        border-radius: 0 0 20px 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .headerButton {
+        max-width: none;
+        width: 100%;
+        border-radius: 8px;
+    }
 }

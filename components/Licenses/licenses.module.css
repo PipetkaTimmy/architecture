@@ -1,9 +1,22 @@
 .licensesContainer {
     display: flex;
     justify-content: space-between;
+    margin-top: 64px;
 }
+
 .imgButton {
     height: max-content;
     padding: 0;
     margin: 0;
+}
+
+
+@media (max-width: 901px) {
+    .licensesContainer{
+        overflow-y: scroll;
+    }
+    .imgButton{
+        min-width: 345px;
+        margin-left: 10px;    
+    }
 }

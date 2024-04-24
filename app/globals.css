@@ -31,9 +31,7 @@ body {
 }
 
 .navbar {
-  position: fixed;
   width: 100%;
-  padding: 30px 64px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,4 +72,102 @@ main {
 
 .text-white {
   color: #fff;
+}
+
+.customTitle {
+  max-width: 840px;
+}
+
+
+.navMob {
+  display: none;
+}
+
+
+.navMobContainer {
+  display: none;
+  transition: .3s;
+  position: absolute;
+}
+
+.navOpen {
+  display: block;
+  height: 100vh;
+  z-index: 100;
+  background-color: #fff;
+  transition: .3s;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.navBtn {
+  background-color: transparent;
+}
+
+.navMob img {
+  width: 40px!important;
+}
+
+.navMobContainer {
+  padding: 20px 0;
+}
+
+.mobNavHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.mobNavHeader span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mobNavHeader button {
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.mobNavHeader img {
+  width: 40px !important;
+}
+
+.mobLinksWraper {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobLinksWraper a:nth-child(1) {
+  border-top: 1px solid #101010;
+}
+
+.mobLinksWraper a {
+  border-bottom: 1px solid #101010;
+  padding: 16px 24px;
+  font-size: 28px;
+  font-weight: 500;
+
+}
+
+
+@media (max-width: 901px) {
+  .navigation {
+    display: none;
+  }
+
+  .navMob {
+    display: block;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .container{
+    padding: 24px 10px;
+  }
 }
