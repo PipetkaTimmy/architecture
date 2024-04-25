@@ -16,6 +16,9 @@ const Modal5 = ({ isOpen, onClose, }) => {
           <img src="/modal/5.png" alt="" />
         </div>
         <div className={styles.content}>
+          <div className={styles.fixedImgMob}>
+            <img src="/modal/5.png" alt="" />
+          </div>
           <div className={styles.modalHeader}>
             <h2 className={styles.modalTitle}>Юридическое сопровождение</h2>
             <div className={styles.priceWraper}>

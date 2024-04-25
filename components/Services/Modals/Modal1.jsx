@@ -17,6 +17,9 @@ const Modal1 = ({ isOpen, onClose, }) => {
                     <img src="/modal/1.png" alt="" />
                 </div>
                 <div className={styles.content}>
+                    <div className={styles.fixedImgMob}>
+                        <img src="/modal/1.png" alt="" />
+                    </div>
                     <div className={styles.modalHeader}>
                         <h2 className={styles.modalTitle}>Узаконение квартир</h2>
                         <div className={styles.modalNav}>

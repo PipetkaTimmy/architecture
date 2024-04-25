@@ -254,10 +254,30 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
     transition: .3s;
 }
 
+.fixedImgMob {
+    display: none;
+    background-color: #161616;
+}
+
+.fixedImgMob img {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background: #000;
+}
+
 @media (max-width: 901px) {
     .serviceBlock {
         min-width: 345px;
         padding: 10px;
+    }
+
+    .modalHeader {
+        margin-top: 385px;
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        padding: 10px 24px;
     }
 
     .paralaxImg img {
@@ -268,12 +288,58 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
         display: none;
     }
 
+
+    .fixedImgMob {
+        display: block;
+    }
+
     .content {
         width: 100%;
     }
-    
-    .modalNavBtn, .grayBlock{
+
+    .modalNavBtn,
+    .grayBlock {
         padding: 12px;
+    }
+
+    .accordionWraper {
+        position: relative;
+        z-index: 2;
+        background: #fff;
+    }
+
+    .button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-500.rounded-full.hover\:bg-default-100.active\:bg-default-200.tap-highlight-transparent.outline-none.data-\[focus-visible\=true\]\:z-10.data-\[focus-visible\=true\]\:outline-2.data-\[focus-visible\=true\]\:outline-focus.data-\[focus-visible\=true\]\:outline-offset-2 {
+        z-index: 100;
+    }
+
+    .modalTitle {
+        font-size: 18px;
+    }
+
+    .typeOfWork {
+        font-size: 22px;
+    }
+
+    .priceBtn {
+        padding: 12px;
+    }
+
+    .priceBtn{
+        height: 120px;
+    }
+
+    .priceBtn span:nth-child(1) {
+        font-size: 16px;
+        font-size: 16px;
+        font-weight: 400;
+        max-width: 270px;
+        word-wrap: inherit;
+        white-space: break-spaces;
+        text-align: left;
+    }
+
+    .priceBtn span:nth-child(2) {
+        font-size: 18px;
     }
 
 }
