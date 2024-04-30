@@ -100,7 +100,7 @@ const Calc = () => {
         console.log("Площадь:", area);
 
         const baseURL = 'https://wa.me/';
-        const phone = '+77071179910';
+        const phone = '+77064213729';
         const message = `Имя: ${name}%0aНомер телефона: ${phoneNumber}%0aОбъект: ${object}%0aУслуга: ${service}%0aВид работы: ${work}%0aПлощадь: ${area}`;
         // const message = 'Name: %0a Dim';
         const whatsappLink = `${baseURL}${phone}/?text=${message}`;
@@ -138,9 +138,10 @@ const Calc = () => {
                             errorMessage={!object && touched ? "Поле не заполнено" : ""}
                             isInvalid={!object && touched ? true : false}
                             isRequired
+                            className={styles.colorBlack}
                         >
                             {objects.map((object) => (
-                                <SelectItem key={object} value={object}>
+                                <SelectItem key={object} value={object} className={styles.colorBlack}>
                                     {object}
                                 </SelectItem>
                             ))}
@@ -151,9 +152,10 @@ const Calc = () => {
                             onChange={handleSelectionChange}
                             errorMessage={!service && touched ? "Поле не заполнено" : ""}
                             isInvalid={!service && touched ? true : false}
+                            className={styles.colorBlack}
                         >
                             {services.map((service) => (
-                                <SelectItem key={service} value={service}>
+                                <SelectItem key={service} value={service} className={styles.colorBlack}>
                                     {service}
                                 </SelectItem>
                             ))}

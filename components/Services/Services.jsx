@@ -30,7 +30,7 @@ const Services = () => {
                             <p className={styles.miniText}>- Вывод в нежилой фонд</p>
                             <p className={styles.miniText}>- Захват площади кондоминиума</p>
                         </div>
-                        <Parallax speed={5} className={styles.paralaxImg}>
+                        <Parallax speed={-100} className={styles.paralaxImg}>
                             <img src="/services_img/1.png" alt="" />
                         </Parallax>
                     </Button>
@@ -43,7 +43,7 @@ const Services = () => {
                             <p className={styles.miniText}>- Узаконение нового строительства</p>
                             <p className={styles.miniText}>- Реконструкция жилого дома (пристройка) (скоро)</p>
                         </div>
-                        <Parallax speed={5} className={styles.paralaxImg}>
+                        <Parallax speed={-100} className={styles.paralaxImg}>
                             <img src="/services_img/2.png" alt="" />
                         </Parallax>
                     </Button>
@@ -54,7 +54,7 @@ const Services = () => {
                             <p className={styles.miniText}>- Эскизный проект</p>
                             <p className={styles.miniText}>- Получение разрешительных  документов на строительство</p>
                         </div>
-                        <Parallax speed={5} className={styles.paralaxImg}>
+                        <Parallax speed={-100} className={styles.paralaxImg}>
                             <img src="/services_img/3.png" alt="" />
                         </Parallax>
                     </Button>
@@ -70,7 +70,7 @@ const Services = () => {
                             <p className={styles.miniText}>-Реконструкция фасада с новым входом или пристройкой (скоро)</p>
                             <p className={styles.miniText}>-Возведение 2-го этажа (скоро)</p>
                         </div>
-                        <Parallax speed={5} className={styles.paralaxImg}>
+                        <Parallax speed={-100} className={styles.paralaxImg}>
                             <img src="/services_img/4.png" alt="" />
                         </Parallax>
                     </Button>
@@ -79,7 +79,7 @@ const Services = () => {
                         <div className={styles.addText}>
                             <p className={styles.miniText}>-Земельные отношения и <br /> представительство</p>
                         </div>
-                        <Parallax speed={5} className={styles.paralaxImg}>
+                        <Parallax speed={-100} className={styles.paralaxImg} t>
                             <img src="/services_img/5.png" alt="" />
                         </Parallax>
                     </Button>

@@ -9,7 +9,14 @@ const Modal3 = ({ isOpen, onClose, }) => {
   const handleButtonClick = (item) => {
     setExpanded([`${item}`]);
   };
+  const sendMessage = (title) => {
+    const baseURL = 'https://wa.me/';
+    const phone = '+77071179910';
+    const message = `Здравсвуйте, я интересуюсь услугой "${title}".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
+    const whatsappLink = `${baseURL}${phone}/?text=${message}`;
 
+    window.open(whatsappLink, '_blank');
+  }
   return (
     <Modal size='full' isOpen={isOpen} onClose={onClose}>
       <ModalContent className={[styles.modalBg, styles.modalContainer]}>
@@ -61,7 +68,7 @@ const Modal3 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 100 000 тенге.</span>
                     <span>*рассчитывается на основании сложности проекта</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={()=>sendMessage('Технический проект')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
@@ -94,7 +101,7 @@ const Modal3 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 80 000 тенге.</span>
                     <span>*рассчитывается на основании сложности проекта</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={()=>sendMessage('Эскизный проект')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>

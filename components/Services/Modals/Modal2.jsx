@@ -9,7 +9,14 @@ const Modal2 = ({ isOpen, onClose, }) => {
   const handleButtonClick = (item) => {
     setExpanded([`${item}`]);
   };
+  const sendMessage = (title) => {
+    const baseURL = 'https://wa.me/';
+    const phone = '+77071179910';
+    const message = `Здравсвуйте, я интересуюсь услугой "${title}".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
+    const whatsappLink = `${baseURL}${phone}/?text=${message}`;
 
+    window.open(whatsappLink, '_blank');
+  }
   return (
     <Modal size='full' isOpen={isOpen} onClose={onClose}>
       <ModalContent className={[styles.modalBg, styles.modalContainer]}>
@@ -68,7 +75,7 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 80 000 тенге.</span>
                     <span>* государственная пошлина за технический паспорт оплачивается отдельно</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={() => sendMessage('Перепланировка и переоборудование жилого дома и хоз.бытовых построек')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
@@ -105,7 +112,7 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 250 000 тенге.</span>
                     <span>*в стоимость работ не включены оплаты государственных пошлин.</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={() => sendMessage('Разделение жилого дома')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
@@ -140,7 +147,7 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 130 000 тенге.</span>
                     <span>*в стоимость включены все затраты</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={() => sendMessage('Узаконение сноса')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
@@ -178,7 +185,7 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 350 000 тенге.</span>
                     <span>*в стоимость оказания услуг не входит стоимость государственной пошлины за технический паспорт, исполнительной и топографической съемки.</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={() => sendMessage('Узаконение нового строительства')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>

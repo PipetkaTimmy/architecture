@@ -9,7 +9,14 @@ const Modal4 = ({ isOpen, onClose, }) => {
   const handleButtonClick = (item) => {
     setExpanded([`${item}`]);
   };
+  const sendMessage = (title) => {
+    const baseURL = 'https://wa.me/';
+    const phone = '+77071179910';
+    const message = `Здравсвуйте, я интересуюсь услугой "${title} ".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
+    const whatsappLink = `${baseURL}${phone}/?text=${message}`;
 
+    window.open(whatsappLink, '_blank');
+  }
   return (
     <Modal size='full' isOpen={isOpen} onClose={onClose}>
       <ModalContent className={[styles.modalBg, styles.modalContainer]}>
@@ -21,7 +28,7 @@ const Modal4 = ({ isOpen, onClose, }) => {
             <img src="/modal/4.png" alt="" />
           </div>
           <div className={styles.modalHeader}>
-            <h2 className={styles.modalTitle}>Проектирование</h2>
+            <h2 className={styles.modalTitle}>Коммерческие помощения </h2>
             <div className={styles.modalNav}>
               <h2 className={styles.typeOfWork}>Вид работы </h2>
               <div className={styles.buttonWraper}>
@@ -61,7 +68,7 @@ const Modal4 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 80 000 тенге.</span>
                     <span>* государственная пошлина за технический паспорт оплачивается заказчиком отдельно</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={()=>sendMessage('Перепланировка нежилого помещения')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
@@ -91,7 +98,7 @@ const Modal4 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 150 000 тенге.</span>
                     <span>* в стоимость услуг не входит государственная пошлина за технический паспорт.</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={()=>sendMessage('Разделение нежилого помещения')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
@@ -121,7 +128,7 @@ const Modal4 = ({ isOpen, onClose, }) => {
                     <span>Срок работы</span>
                     <span>от 150 000 тенге.</span>
                     <span>* в стоимость услуг не входит государственная пошлина за технический паспорт.</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onClick={()=>sendMessage('Объединение нежилых помещений')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>

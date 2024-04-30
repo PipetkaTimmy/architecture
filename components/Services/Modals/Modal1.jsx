@@ -10,6 +10,15 @@ const Modal1 = ({ isOpen, onClose, }) => {
         setExpanded([`${item}`]);
     };
 
+    const sendMessage = (title) => {
+        const baseURL = 'https://wa.me/';
+        const phone = '+77071179910';
+        const message = `Здравсвуйте, я интересуюсь услугой "${title}".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
+        const whatsappLink = `${baseURL}${phone}/?text=${message}`;
+
+        window.open(whatsappLink, '_blank');
+    }
+
     return (
         <Modal size='full' isOpen={isOpen} onClose={onClose}>
             <ModalContent className={[styles.modalBg, styles.modalContainer]}>
@@ -55,7 +64,7 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>Срок работы</span>
                                         <span>от 10 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onClick={() => sendMessage('Набор актов ввода в эксплуатацию')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +96,7 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>Срок работы</span>
                                         <span>от 60 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onClick={() => sendMessage('Перепланировка')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +127,7 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>Срок работы</span>
                                         <span>от 70 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onClick={() => sendMessage('Переоборудование')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +161,7 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>Срок работы</span>
                                         <span>от 70 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onClick={() => sendMessage('Присоединение балкона/ лоджии в полезную площадь квартиры')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +195,7 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>Срок работы</span>
                                         <span>от 150 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onClick={() => sendMessage('Разделение квартир')} >Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +228,7 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>Срок работы</span>
                                         <span>от 160 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onClick={() => sendMessage('Разделение квартир')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>

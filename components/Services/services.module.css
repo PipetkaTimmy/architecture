@@ -13,11 +13,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 572px;
+    min-width: 430px;
     position: relative;
     overflow: hidden;
     flex: 1;
     align-items: flex-start;
+    transition: .1s;
+}
+
+.miniText {
+    white-space: normal;
+    text-align: left;
+}
+
+.serviceBlock:hover{
+    background-color: #6BA64C;
+    transition: .1s;
 }
 
 .serviceBlockTitle {
@@ -118,6 +129,7 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
     padding: 24px;
     font-size: 28px;
     font-weight: 700;
+    color: #101010;
 }
 
 .topBlock {
@@ -213,11 +225,13 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
 
 .modalTitle {
     font-size: 24px;
+    color: #101010;
 }
 
 .typeOfWork {
     font-size: 26px;
     font-weight: 700;
+    color: #101010;
 }
 
 .priceWraper {
@@ -264,6 +278,18 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
     top: 0;
     z-index: 1;
     background: #000;
+}
+
+@media (max-width: 1440px) {
+    .serviceBlock{
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .serviceBlock{
+        min-width: 400px;
+    }
 }
 
 @media (max-width: 901px) {
@@ -341,6 +367,9 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
     .priceBtn span:nth-child(2) {
         font-size: 18px;
     }
+    .servicesContainer{
+        margin-top: 24px;
+    }
 
 }
 
@@ -348,4 +377,10 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
     .serviceBlockTitle {
         font-size: 20px;
     }
+    .serviceBlock{
+        min-width: 345px;
+        padding: 16px;
+        height: 270px;
+    }
+    
 }

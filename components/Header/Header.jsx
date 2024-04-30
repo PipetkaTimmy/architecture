@@ -49,7 +49,7 @@ const Header = () => {
                     <h1 className='title text-white'>Профессиональное проектирование и узаконение</h1>
                     <p className={`${styles.addText} text-white`}>Открой новые горизонты с Nomad:
                         Воплощаем историю в современных проектах!</p>
-                    <Button className={styles.headerButton}>Бесплатная консультация</Button>
+                    <Button className={styles.headerButton} onClick={() => window.open('https://wa.me/+77064213729/?text=Здравствуйте, я интересуюсь профессиональным проектированием и узаконением. Я хотел(а) бы узнать больше о ваших услугах в этой области. Не могли бы вы подробнее рассказать о том, что вы предлагаете?', '_blank')}>Бесплатная консультация</Button>
                 </div>
             </div>
         </section>

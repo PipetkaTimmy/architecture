@@ -88,6 +88,7 @@ main {
   display: none;
   transition: .3s;
   position: absolute;
+  color: #101010;
 }
 
 .navOpen {
@@ -152,6 +153,12 @@ main {
   font-weight: 500;
 
 }
+
+button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-500.rounded-full.hover\:bg-default-100.active\:bg-default-200.tap-highlight-transparent.outline-none.data-\[focus-visible\=true\]\:z-10.data-\[focus-visible\=true\]\:outline-2.data-\[focus-visible\=true\]\:outline-focus.data-\[focus-visible\=true\]\:outline-offset-2{
+  z-index: 100;
+  color: #101010;
+}
+
 
 
 @media (max-width: 901px) {

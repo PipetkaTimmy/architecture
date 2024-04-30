@@ -29,14 +29,21 @@
     gap: 20px;
 }
 
+.colorBlack{
+    color: #000;
+}
+
 .button {
-    margin-top: 104px;
+    margin-top: 120px;
     width: 100%;
     padding: 30px;
     color: #8a8a8a;
     background-color: #6BA64C80;
     font-weight: 700;
     font-size: 18px;
+}
+.calcTitle{
+    color: #101010;
 }
 
 @media (max-width: 901px) {
