@@ -11,7 +11,7 @@ const Modal3 = ({ isOpen, onClose, }) => {
   };
   const sendMessage = (title) => {
     const baseURL = 'https://wa.me/';
-    const phone = '+77071179910';
+    const phone = '77064213729';
     const message = `Здравсвуйте, я интересуюсь услугой "${title}".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
     const whatsappLink = `${baseURL}${phone}/?text=${message}`;
 
@@ -21,14 +21,19 @@ const Modal3 = ({ isOpen, onClose, }) => {
     <Modal size='full' isOpen={isOpen} onClose={onClose}>
       <ModalContent className={[styles.modalBg, styles.modalContainer]}>
         <div className={styles.fixedImg}>
-          <img src="/modal/3.png" alt="" />
+          <img src="/modal/3.png" alt=""/>
         </div>
         <div className={styles.content}>
           <div className={styles.fixedImgMob}>
             <img src="/modal/3.png" alt="" />
           </div>
           <div className={styles.modalHeader}>
-            <h2 className={styles.modalTitle}>Проектирование</h2>
+            <div className={styles.headerContainer}>
+              <h2 className={styles.modalTitle}>Проектирование</h2>
+              <Button className={styles.closeBtnModal} isIconOnly onClick={() => onClose()}>
+                <img src="/exit.png" alt="" />
+              </Button>
+            </div>
             <div className={styles.modalNav}>
               <h2 className={styles.typeOfWork}>Вид работы </h2>
               <div className={styles.buttonWraper}>

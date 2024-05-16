@@ -86,28 +86,35 @@ main {
 
 .navMobContainer {
   display: none;
-  transition: .3s;
-  position: absolute;
-  color: #101010;
+  position: fixed;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
 
 .navOpen {
-  display: block;
   height: 100vh;
   z-index: 100;
-  background-color: #fff;
   transition: .3s;
   left: 0;
   top: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+
 
 .navBtn {
   background-color: transparent;
 }
 
 .navMob img {
-  width: 40px!important;
+  width: 40px !important;
 }
 
 .navMobContainer {
@@ -143,21 +150,44 @@ main {
 }
 
 .mobLinksWraper a:nth-child(1) {
-  border-top: 1px solid #101010;
+  border-top: 1px solid #ffffff;
 }
 
 .mobLinksWraper a {
-  border-bottom: 1px solid #101010;
+  border-bottom: 1px solid #ffffff;
   padding: 16px 24px;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 500;
 
 }
 
-button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-500.rounded-full.hover\:bg-default-100.active\:bg-default-200.tap-highlight-transparent.outline-none.data-\[focus-visible\=true\]\:z-10.data-\[focus-visible\=true\]\:outline-2.data-\[focus-visible\=true\]\:outline-focus.data-\[focus-visible\=true\]\:outline-offset-2{
+button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-500.rounded-full.hover\:bg-default-100.active\:bg-default-200.tap-highlight-transparent.outline-none.data-\[focus-visible\=true\]\:z-10.data-\[focus-visible\=true\]\:outline-2.data-\[focus-visible\=true\]\:outline-focus.data-\[focus-visible\=true\]\:outline-offset-2 {
   z-index: 100;
-  color: #101010;
+  color: transparent;
+  right: 20px;
 }
+
+.bottomContacts {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.mobCont {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.mobCont span {
+  text-decoration: underline;
+}
+
+.mobCont img {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+
 
 
 
@@ -174,7 +204,8 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
     font-size: 32px;
     font-weight: 700;
   }
-  .container{
+
+  .container {
     padding: 24px 10px;
   }
 }

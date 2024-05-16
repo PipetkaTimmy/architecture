@@ -25,21 +25,38 @@ const Header = () => {
                     </div>
                     <div className='navMob'>
                         <Button className='navBtn' onClick={() => changeMenu()}>
-                            <img src="/menu.svg" alt=""/>
+                            <img src="/menu.svg" alt="" />
                         </Button>
                         <div className={`navMobContainer ${isMenuOpen ? 'navOpen' : ''}`}>
-                            <div className='mobNavHeader'>
-                                <span>Меню</span>
-                                <Button className='navBtn' onClick={() => changeMenu()}>
-                                    <img src="/close.svg" alt="" />
-                                </Button>
+                            <div>
+                                <div className='mobNavHeader'>
+                                    <span>Меню</span>
+                                    <Button className='navBtn' onClick={() => changeMenu()}>
+                                        <img src="/close.svg" alt="" />
+                                    </Button>
+                                </div>
+                                <div className='mobLinksWraper'>
+                                    <Link onClick={() => changeMenu()} href="/#services" className={styles.hoverLink}>Услуги</Link>
+                                    <Link onClick={() => changeMenu()} href="/#calc" className={styles.hoverLink}>Расчет стоимости</Link>
+                                    <Link onClick={() => changeMenu()} href="/#faq" className={styles.hoverLink}>Полезная информация</Link>
+                                    <Link onClick={() => changeMenu()} href="/#licenses" className={styles.hoverLink}>Лицензия</Link>
+                                    <Link onClick={() => changeMenu()} href="/#footer" className={styles.hoverLink}>Контакты</Link>
+                                </div>
                             </div>
-                            <div className='mobLinksWraper'>
-                                <Link href="/#services" className={styles.hoverLink}>Услуги</Link>
-                                <Link href="/#calc" className={styles.hoverLink}>Расчет стоимости</Link>
-                                <Link href="/#faq" className={styles.hoverLink}>Полезная информация</Link>
-                                <Link href="/#licenses" className={styles.hoverLink}>Лицензия</Link>
-                                <Link href="/#footer" className={styles.hoverLink}>Контакты</Link>
+                            <div className='bottomContacts'>
+                                <span>Контакты</span>
+                                <div className='mobCont'>
+                                    <img src="/phone_white.png" alt="" />
+                                    <span>
+                                        +7 706 421 37 29
+                                    </span>
+                                </div>
+                                <div className='mobCont'>
+                                    <img src="/mail_white.png" alt="" />
+                                    <span>
+                                        nomadstroyproject@mail.ru
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -49,7 +66,7 @@ const Header = () => {
                     <h1 className='title text-white'>Профессиональное проектирование и узаконение</h1>
                     <p className={`${styles.addText} text-white`}>Открой новые горизонты с Nomad:
                         Воплощаем историю в современных проектах!</p>
-                    <Button className={styles.headerButton} onClick={() => window.open('https://wa.me/+77064213729/?text=Здравствуйте, я интересуюсь профессиональным проектированием и узаконением. Я хотел(а) бы узнать больше о ваших услугах в этой области. Не могли бы вы подробнее рассказать о том, что вы предлагаете?', '_blank')}>Бесплатная консультация</Button>
+                    <Button className={styles.headerButton} onClick={() => window.open('https://wa.me/77064213729/?text=Здравствуйте, я интересуюсь профессиональным проектированием и узаконением. Я хотел(а) бы узнать больше о ваших услугах в этой области. Не могли бы вы подробнее рассказать о том, что вы предлагаете?', '_blank')}>Бесплатная консультация</Button>
                 </div>
             </div>
         </section>

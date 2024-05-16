@@ -19,15 +19,21 @@ const Footer = () => {
                 <div className={styles.socialMedia}>
                     <div className={styles.contactBlock}>
                         <img src="/inst.png" alt="" />
-                        <span>Instagram</span>
+                        <a href="https://www.instagram.com/nomadstroy_project?igsh=MWRzZ3Yzbm9hcmEybg==" _blank>
+                            <span>Instagram</span>
+                        </a>
                     </div>
                     <div className={styles.contactBlock}>
                         <img src="/wp.png" alt="" />
-                        <span>WhatsApp</span>
+                        <a href="https://wa.me/77064213729" _blank>
+                            <span>WhatsApp</span>
+                        </a>
                     </div>
                     <div className={styles.contactBlock}>
                         <img src="/tg.png" alt="" />
-                        <span>Telegram</span>
+                        <a href="https://t.me/77064213729" _blank>
+                            <span>Telegram</span>
+                        </a>
                     </div>
                 </div>
             </div>

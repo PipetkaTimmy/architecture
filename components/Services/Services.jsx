@@ -48,7 +48,7 @@ const Services = () => {
                         </Parallax>
                     </Button>
                     <Button className={styles.serviceBlock} onClick={onOpenModal3}>
-                        <h3 className={styles.serviceBlockTitle}>Перепланировки</h3>
+                        <h3 className={styles.serviceBlockTitle}>Проектирование</h3>
                         <div className={styles.addText}>
                             <p className={styles.miniText}>- Технический проект</p>
                             <p className={styles.miniText}>- Эскизный проект</p>

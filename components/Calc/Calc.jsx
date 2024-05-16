@@ -100,7 +100,7 @@ const Calc = () => {
         console.log("Площадь:", area);
 
         const baseURL = 'https://wa.me/';
-        const phone = '+77064213729';
+        const phone = '77064213729';
         const message = `Имя: ${name}%0aНомер телефона: ${phoneNumber}%0aОбъект: ${object}%0aУслуга: ${service}%0aВид работы: ${work}%0aПлощадь: ${area}`;
         // const message = 'Name: %0a Dim';
         const whatsappLink = `${baseURL}${phone}/?text=${message}`;
@@ -169,7 +169,7 @@ const Calc = () => {
                                 isInvalid={!work && touched ? true : false}
                             >
                                 {works.map((workOption) => (
-                                    <SelectItem key={workOption} value={workOption}>
+                                    <SelectItem key={workOption} value={workOption} className={styles.colorBlack}>
                                         {workOption}
                                     </SelectItem>
                                 ))}

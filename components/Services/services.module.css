@@ -70,8 +70,10 @@
 }
 
 .fixedImg {
-    position: relative;
+    position: absolute;
     width: 60%;
+    left: 0;
+    bottom: 0;
 }
 
 .content {
@@ -79,6 +81,9 @@
     background-color: #fff;
     height: 100%;
     overflow-y: scroll;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .modalHeader {
@@ -273,6 +278,20 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
     background-color: #161616;
 }
 
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeBtnModal{
+    /* display: none; */
+    padding: 0;
+    margin: 0;
+    max-width: 0;
+    background-color: transparent;
+}
+
 .fixedImgMob img {
     position: fixed;
     top: 0;
@@ -297,9 +316,20 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
         min-width: 345px;
         padding: 10px;
     }
+    .closeBtnModal{
+        display: block;
+    }
 
     .modalHeader {
         margin-top: 385px;
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        padding: 10px 24px;
+    }
+
+    .modalHeader2{
+        margin-top: 300px;
         position: relative;
         z-index: 2;
         background: #fff;
