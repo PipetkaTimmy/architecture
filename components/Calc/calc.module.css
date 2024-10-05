@@ -1,12 +1,14 @@
 .calcContainer {
     display: flex;
     flex-wrap: wrap;
-
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .calcContainer img {
     flex: 1;
     width: 50%;
+    border-radius: 16px;
 }
 
 .inputContainer {
