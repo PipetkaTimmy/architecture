@@ -47,7 +47,7 @@
 
     .faqBlock {
         min-width: 344px;
-        height: 280px;
+        /* height: 280px; */
     }
 
     .faqBlock h2 {
