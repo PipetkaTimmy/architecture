@@ -21,7 +21,7 @@ const Services = () => {
             <section className='container' id="services">
                 <h1 className='title colorBlack'>Мы предлагаем большой спектр услуг</h1>
                 <div className={styles.servicesContainer}>
-                    <Button className={styles.serviceBlock} onClick={onOpenModal1}>
+                    <Button className={styles.serviceBlock} onPress={onOpenModal1}>
                         <h3 className={styles.serviceBlockTitle}>Узаконение <br /> квартир</h3>
                         <div className={styles.addText}>
                             <p className={styles.miniText}>- Набор актов ввода в эксплуатацию</p>
@@ -34,20 +34,20 @@ const Services = () => {
                             <img src="/services_img/1.png" alt="" />
                         </Parallax>
                     </Button>
-                    <Button className={styles.serviceBlock} onClick={onOpenModal2}>
+                    <Button className={styles.serviceBlock} onPress={onOpenModal2}>
                         <h3 className={styles.serviceBlockTitle}>Жилой дом и хозяйственно- <br /> бытовые постройки</h3>
                         <div className={styles.addText}>
                             <p className={styles.miniText}>- Перепланировка и переоборудование жилого дома и хоз.бытовых построек</p>
                             <p className={styles.miniText}>- Разделение жилого дома</p>
                             <p className={styles.miniText}>- Узаконение сноса</p>
                             <p className={styles.miniText}>- Узаконение нового строительства</p>
-                            <p className={styles.miniText}>- Реконструкция жилого дома (пристройка) (скоро)</p>
+                            <p className={styles.miniText}>- Реконструкция жилого дома (пристройка)</p>
                         </div>
                         <Parallax speed={-100} className={styles.paralaxImg}>
                             <img src="/services_img/2.png" alt="" />
                         </Parallax>
                     </Button>
-                    <Button className={styles.serviceBlock} onClick={onOpenModal3}>
+                    <Button className={styles.serviceBlock} onPress={onOpenModal3}>
                         <h3 className={styles.serviceBlockTitle}>Проектирование</h3>
                         <div className={styles.addText}>
                             <p className={styles.miniText}>- Технический проект</p>
@@ -60,21 +60,21 @@ const Services = () => {
                     </Button>
 
 
-                    <Button className={styles.serviceBlock} onClick={onOpenModal4}>
+                    <Button className={styles.serviceBlock} onPress={onOpenModal4}>
                         <h3 className={styles.serviceBlockTitle}>Коммерческие <br /> помещения</h3>
                         <div className={styles.addText}>
                             <p className={styles.miniText}>-Перепланировка</p>
                             <p className={styles.miniText}>-Разделение нежилого помещения</p>
                             <p className={styles.miniText}>-Объединение нежилых помещений</p>
-                            <p className={styles.miniText}>-Изменение функционального назначения (скоро)</p>
-                            <p className={styles.miniText}>-Реконструкция фасада с новым входом или пристройкой (скоро)</p>
-                            <p className={styles.miniText}>-Возведение 2-го этажа (скоро)</p>
+                            <p className={styles.miniText}>-Изменение функционального назначения</p>
+                            <p className={styles.miniText}>-Реконструкция фасада с новым входом или пристройкой</p>
+                            <p className={styles.miniText}>-Возведение 2-го этажа</p>
                         </div>
                         <Parallax speed={-100} className={styles.paralaxImg}>
                             <img src="/services_img/4.png" alt="" />
                         </Parallax>
                     </Button>
-                    <Button className={styles.serviceBlock} onClick={onOpenModal5}>
+                    <Button className={styles.serviceBlock} onPress={onOpenModal5}>
                         <h3 className={styles.serviceBlockTitle}>Юридическое <br /> сопровождение</h3>
                         <div className={styles.addText}>
                             <p className={styles.miniText}>-Земельные отношения и <br /> представительство</p>

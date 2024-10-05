@@ -22,6 +22,13 @@ const Calc = () => {
     });
     const [touched, setTouched] = useState(false);
 
+    const isFormValid = () => {
+        return name && phoneNumber && object && service && work && area;
+    };
+
+    const buttonClass = isFormValid() ? styles.buttonActive : styles.buttonInactive;
+
+
     const objects = ["Квартира", "Жилой дом (хоз. постройки)", "Коммерческое помещение (н.п., в.п.)", "Иное"];
     const services = ["Узаконение квартир", "Жилой дом и хозяйственно-бытовые постройки", "Проектирование", "Коммерческие помещения", "Юридическое сопровождение"];
 
@@ -183,7 +190,7 @@ const Calc = () => {
                             error={errors.area ? "Поле не заполнено" : ""}
                         />
                     </div>
-                    <Button className={styles.button} onClick={handleSubmit}>Рассчитать</Button>
+                    <Button className={buttonClass} onPress={handleSubmit}>Рассчитать</Button>
                 </div>
             </div>
         </section>

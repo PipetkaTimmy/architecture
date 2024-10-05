@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <Services />
       <Calc />
+      <Services />
       <FAQ1 />
       <FAQ2 />
       <Licenses />

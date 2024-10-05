@@ -12,7 +12,7 @@
 .inputContainer {
     background-color: #fff;
     flex: 1;
-    padding: 42px;
+    padding: 20px;
     border-radius: 20px;
     width: 50%;
 }
@@ -29,12 +29,12 @@
     gap: 20px;
 }
 
-.colorBlack{
+.colorBlack {
     color: #000;
 }
 
-.button {
-    margin-top: 120px;
+.buttonInactive {
+    margin-top: 30px;
     width: 100%;
     padding: 30px;
     color: #8a8a8a;
@@ -42,15 +42,28 @@
     font-weight: 700;
     font-size: 18px;
 }
-.calcTitle{
+
+.buttonActive {
+    background-color: #6BA64C;
+    margin-top: 30px;
+    width: 100%;
+    padding: 30px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+.calcTitle {
     color: #101010;
 }
 
 @media (max-width: 901px) {
-    .calcContainer img{
+    .calcContainer img {
         display: none;
     }
-    .inputContainer{
+
+    .inputContainer {
         width: 100%;
     }
 }

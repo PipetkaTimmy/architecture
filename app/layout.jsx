@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { GoogleTagManager } from '@next/third-parties/google'
+import ContactButton from "@/components/ContactButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,9 +20,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
+
       <body className={inter.className}>
         {children}
+        <GoogleTagManager gtmId="AW-16598263306" />
+        {/* <a href="https://wa.me/77064213729" target="_blank">
+          <Button className="fixBtn" isIconOnly>
+            <img src="/messages.svg" alt="message" />
+          </Button>
+        </a> */}
+        <ContactButton />
       </body>
     </html>
   );

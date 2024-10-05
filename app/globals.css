@@ -42,6 +42,7 @@ body {
   gap: 32px;
   font-size: 18px;
   color: #fff;
+  align-items: center;
 }
 
 main {
@@ -55,10 +56,13 @@ main {
 }
 
 .title {
-  font-size: 56px;
+  font-size: 37px;
   line-height: normal;
-  max-width: 940px;
-  font-weight: 700;
+  max-width: 750px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .colorBlack {
@@ -119,6 +123,7 @@ main {
 
 .navMobContainer {
   padding: 20px 0;
+  padding-bottom: 20%;
 }
 
 .mobNavHeader {
@@ -185,6 +190,76 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
 .mobCont img {
   width: 24px !important;
   height: 24px !important;
+}
+
+.menu-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+}
+
+.fixBtn {
+  position: fixed;
+  background-color: #81a969;
+  width: 64px;
+  height: 64px;
+  animation: pulse 2s infinite;
+}
+
+.fixBtn img {
+  width: 34px;
+  height: 34px;
+}
+
+.menu {
+  position: absolute;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  bottom: 10px;
+  animation: slideUp  0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.menuBtn {
+  transition: transform 0.3s ease-in-out;
+  background-color: #81a969;
+  width: 56px;
+  height: 56px;
+  padding: 6px;
+}
+
+.imgRotate{
+  transform: rotate(-45deg)
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
 }
 
 

@@ -71,13 +71,14 @@
 
 .fixedImg {
     position: absolute;
-    width: 60%;
+    width: 50%;
     left: 0;
-    bottom: 0;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 .content {
-    width: 40%;
+    width: 50%;
     background-color: #fff;
     height: 100%;
     overflow-y: scroll;
@@ -90,6 +91,11 @@
     width: 100%;
     border-bottom: 1px solid #1616164D;
     padding: 28px 42px;
+}
+.modalHeader2{
+    width: 100%;
+    border-bottom: 1px solid #1616164D;
+    padding: 28px 42px; 
 }
 
 button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-500.rounded-full.hover\:bg-default-100.active\:bg-default-200.tap-highlight-transparent.outline-none.data-\[focus-visible\=true\]\:z-10.data-\[focus-visible\=true\]\:outline-2.data-\[focus-visible\=true\]\:outline-focus.data-\[focus-visible\=true\]\:outline-offset-2 {
@@ -260,6 +266,9 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
 .priceBtn span:nth-child(1) {
     font-size: 22px;
     font-weight: 400;
+    white-space: break-spaces;
+    text-align: start;
+    line-height: normal;
 }
 
 .priceBtn span:nth-child(2) {
