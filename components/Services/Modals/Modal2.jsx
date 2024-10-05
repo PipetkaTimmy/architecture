@@ -6,10 +6,23 @@ import Link from 'next/link';
 const Modal2 = ({ isOpen, onClose, }) => {
   const [expanded, setExpanded] = useState([]);
 
-  const handleButtonClick = (item) => {
-    setExpanded([`${item}`]);
-  };
+  const handleButtonPress = (item) => {
+        setExpanded((prevExpanded) => {
+            if (prevExpanded.includes(`${item}`)) {
+                return prevExpanded.filter(i => i !== `${item}`);
+            } else {
+                return [`${item}`];
+            }
+        });
+    };
+  const sendMessage = (title) => {
+    const baseURL = 'https://wa.me/';
+    const phone = '77064213729';
+    const message = `Здравсвуйте, я интересуюсь услугой "${title}".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
+    const whatsappLink = `${baseURL}${phone}/?text=${message}`;
 
+    window.open(whatsappLink, '_blank');
+  }
   return (
     <Modal size='full' isOpen={isOpen} onClose={onClose}>
       <ModalContent className={[styles.modalBg, styles.modalContainer]}>
@@ -21,32 +34,31 @@ const Modal2 = ({ isOpen, onClose, }) => {
             <img src="/modal/2.png" alt="" />
           </div>
           <div className={styles.modalHeader}>
-            <h2 className={styles.modalTitle}>Жилой дом и хозяйственно-бытовые постройки</h2>
-            <div className={styles.modalNav}>
+            <div className={styles.headerContainer}>
+              <h2 className={styles.modalTitle}>Жилой дом и хозяйственно-бытовые постройки</h2>
+              <Button className={styles.closeBtnModal} isIconOnly onPress={() => onClose()}>
+                <img src="/exit.png" alt="" />
+              </Button>
+            </div>
+            {/* <div className={styles.modalNav}>
               <h2 className={styles.typeOfWork}>Вид работы </h2>
               <div className={styles.buttonWraper}>
-                <Link href="/#accordion1" className={styles.modalNavBtn} onClick={() => handleButtonClick(1)}>Перепланировка и переоборудование жилого дома и хоз.бытовых построек</Link>
-                <Link href="/#accordion2" className={styles.modalNavBtn} onClick={() => handleButtonClick(2)}>Разделение жилого дома</Link>
-                <Link href="/#accordion3" className={styles.modalNavBtn} onClick={() => handleButtonClick(3)}>Узаконение сноса</Link>
-                <Link href="/#accordion4" className={styles.modalNavBtn} onClick={() => handleButtonClick(4)}>Узаконение нового строительства</Link>
+                <Link href="/#accordion1" className={styles.modalNavBtn} onPress={() => handleButtonPress(1)}>Перепланировка и переоборудование жилого дома и хоз.бытовых построек</Link>
+                <Link href="/#accordion2" className={styles.modalNavBtn} onPress={() => handleButtonPress(2)}>Разделение жилого дома</Link>
+                <Link href="/#accordion3" className={styles.modalNavBtn} onPress={() => handleButtonPress(3)}>Узаконение сноса</Link>
+                <Link href="/#accordion4" className={styles.modalNavBtn} onPress={() => handleButtonPress(4)}>Узаконение нового строительства</Link>
+                <Link href="/#accordion5" className={styles.modalNavBtn} onPress={() => handleButtonPress(5)}>Реконструкция жилого дома</Link>
               </div>
-              <div className={styles.grayBlocksWraper}>
-                <div className={styles.grayBlock}>Реконструкция жилого дома (пристройка) (<b>СКОРО</b>)</div>
-              </div>
-            </div>
+            </div> */}
           </div>
           <Accordion className={styles.accordionWraper} selectedKeys={expanded}>
-            <AccordionItem key="1" aria-label="Accordion 1" title="Перепланировка и переоборудование жилого дома и хоз.бытовых построек" className={styles.accordion} id='accordion1' onClick={() => handleButtonClick(1)}>
+            <AccordionItem key="1" aria-label="Accordion 1" title="Перепланировка и переоборудование жилого дома и хоз.бытовых построек" className={styles.accordion} id='accordion1' onPress={() => handleButtonPress(1)}>
               <div className={styles.accordionBody}>
                 <div className={styles.topBlock}>
                   <h2 className={styles.Accordion}>Что такое перепланировка и переоборудование жилого дома и/или хозяйственно-бытовых построек</h2>
                   <span>Перепланировка и переоборудование жилого дома и/или хозяйственно-бытовых построек - изменения внутренней планировки или оборудования для адаптации под новые потребности или улучшения условий проживания.</span>
                 </div>
                 <div className={styles.steps}>
-                  <div className={styles.step1}>
-                    <span>Срок работы</span>
-                    <span>1 рабочий день</span>
-                  </div>
                   <div className={styles.preSteps}>
                     <h2>Этапы работы </h2>
                     <div className={styles.preStepsWraper}>
@@ -65,16 +77,16 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>* с момента подписания договора</span>
                   </div>
                   <div className={styles.step2}>
-                    <span>Срок работы</span>
+                    <span>Стоимость работ</span>
                     <span>от 80 000 тенге.</span>
                     <span>* государственная пошлина за технический паспорт оплачивается отдельно</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onPress={() => sendMessage('Перепланировка и переоборудование жилого дома и хоз.бытовых построек')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
             </AccordionItem>
 
-            <AccordionItem key="2" aria-label="Accordion 2" title="Разделение жилого дома" className={styles.accordion} id='accordion2' onClick={() => handleButtonClick(2)}>
+            <AccordionItem key="2" aria-label="Accordion 2" title="Разделение жилого дома" className={styles.accordion} id='accordion2' onPress={() => handleButtonPress(2)}>
               <div className={styles.accordionBody}>
                 <div className={styles.topBlock}>
                   <h2 className={styles.Accordion}>Что такое разделение жилого дома?</h2>
@@ -102,16 +114,16 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>* с момента подписания договора</span>
                   </div>
                   <div className={styles.step2}>
-                    <span>Срок работы</span>
+                    <span>Стоимость работ</span>
                     <span>от 250 000 тенге.</span>
                     <span>*в стоимость работ не включены оплаты государственных пошлин.</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onPress={() => sendMessage('Разделение жилого дома')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
             </AccordionItem>
 
-            <AccordionItem key="3" aria-label="Accordion 3" title="Узаконение сноса" className={styles.accordion} id='accordion3' onClick={() => handleButtonClick(3)}>
+            <AccordionItem key="3" aria-label="Accordion 3" title="Узаконение сноса" className={styles.accordion} id='accordion3' onPress={() => handleButtonPress(3)}>
               <div className={styles.accordionBody}>
                 <div className={styles.topBlock}>
                   <h2 className={styles.Accordion}>Что такое узаконения сноса?</h2>
@@ -137,16 +149,16 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>* с момента подписания договора</span>
                   </div>
                   <div className={styles.step2}>
-                    <span>Срок работы</span>
+                    <span>Стоимость работ</span>
                     <span>от 130 000 тенге.</span>
                     <span>*в стоимость включены все затраты</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onPress={() => sendMessage('Узаконение сноса')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
             </AccordionItem>
 
-            <AccordionItem key="4" aria-label="Accordion 3" title="Узаконение нового строительства" className={styles.accordion} id='accordion4' onClick={() => handleButtonClick(4)}>
+            <AccordionItem key="4" aria-label="Accordion 3" title="Узаконение нового строительства" className={styles.accordion} id='accordion4' onPress={() => handleButtonPress(4)}>
               <div className={styles.accordionBody}>
                 <div className={styles.topBlock}>
                   <h2 className={styles.Accordion}>Что такое узаконение нового строительства жилого дома или хозяйственно-бытовых построек?</h2>
@@ -175,10 +187,48 @@ const Modal2 = ({ isOpen, onClose, }) => {
                     <span>* с момента подписания договора</span>
                   </div>
                   <div className={styles.step2}>
-                    <span>Срок работы</span>
+                    <span>Стоимость работ</span>
                     <span>от 350 000 тенге.</span>
                     <span>*в стоимость оказания услуг не входит стоимость государственной пошлины за технический паспорт, исполнительной и топографической съемки.</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onPress={() => sendMessage('Узаконение нового строительства')}>Заказать услугу</Button>
+                  </div>
+                </div>
+              </div>
+            </AccordionItem>
+            <AccordionItem key="5" aria-label="Accordion 3" title="Реконструкция жилого дома" className={styles.accordion} id='accordion5' onPress={() => handleButtonPress(5)}>
+              <div className={styles.accordionBody}>
+                <div className={styles.topBlock}>
+                  <h2 className={styles.Accordion}>Что такое реконструкция жилого дома?</h2>
+                  <span>Реконструкция жилого дома, строительство холодной и/или жилой пристройки, надстройки, входной группы. Реконструкция – вид строительно-монтажных работ, который подразумевает изменение этажности и/или увеличении площади индивидуального жилого дома, осуществляемых в целях улучшения условий проживания, максимального устранения физического износа и архитектурного облика здания. Обращайтесь в NOMAD за бесплатной консультацией и дальейшим сотрудничеством!</span>
+                </div>
+                <div className={styles.preSteps}>
+                  <h2>Этапы работы </h2>
+                  <div className={styles.preStepsWraper}>
+                    <div>Предварительная экспертиза</div>
+                    <div>Заключение Договора</div>
+                    <div>Набор технического проекта</div>
+                    <div>Получения Решения и АПЗ с ГУ «УАГиЗО»</div>
+                    <div>Прохождение частной вневедомственной экспертизы</div>
+                    <div>Уведомления ГАСК о начале строительно-монтажных работ</div>
+                    <div>Заполнение декларации о соответствии выполненных работ с коммунальными службами</div>
+                    <div>Авторский надзор (заключение о выполненных работ по проекту)</div>
+                    <div>Технический надзор (заключение о качестве строительно-монтажных работ)</div>
+                    <div>Заказ технического паспорта</div>
+                    <div>Заказ исполнительной съемки и регистрации в ТОО «НИППИ АСТАНАГЕНПЛАН»</div>
+                    <div>Заполнение актов ввода объекта в эксплуатацию</div>
+                    <div>Регистрация актов ввода в уполномоченных государственных органах</div>
+                  </div>
+                </div>
+                <div className={styles.steps}>
+                  <div className={styles.step1}>
+                    <span>Срок работы</span>
+                    <span>60 рабочих дней</span>
+                    <span>* с момента подписания договора</span>
+                  </div>
+                  <div className={styles.step2}>
+                    <span>Стоимость работ</span>
+                    <span>от 680 000 тенге.</span>
+                    <Button className={styles.accordionBtn} onPress={() => sendMessage('Реконструкция жилого дома')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>

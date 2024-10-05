@@ -22,6 +22,13 @@ const Calc = () => {
     });
     const [touched, setTouched] = useState(false);
 
+    const isFormValid = () => {
+        return name && phoneNumber && object && service && work && area;
+    };
+
+    const buttonClass = isFormValid() ? styles.buttonActive : styles.buttonInactive;
+
+
     const objects = ["Квартира", "Жилой дом (хоз. постройки)", "Коммерческое помещение (н.п., в.п.)", "Иное"];
     const services = ["Узаконение квартир", "Жилой дом и хозяйственно-бытовые постройки", "Проектирование", "Коммерческие помещения", "Юридическое сопровождение"];
 
@@ -100,7 +107,7 @@ const Calc = () => {
         console.log("Площадь:", area);
 
         const baseURL = 'https://wa.me/';
-        const phone = '+77071179910';
+        const phone = '77064213729';
         const message = `Имя: ${name}%0aНомер телефона: ${phoneNumber}%0aОбъект: ${object}%0aУслуга: ${service}%0aВид работы: ${work}%0aПлощадь: ${area}`;
         // const message = 'Name: %0a Dim';
         const whatsappLink = `${baseURL}${phone}/?text=${message}`;
@@ -138,9 +145,10 @@ const Calc = () => {
                             errorMessage={!object && touched ? "Поле не заполнено" : ""}
                             isInvalid={!object && touched ? true : false}
                             isRequired
+                            className={styles.colorBlack}
                         >
                             {objects.map((object) => (
-                                <SelectItem key={object} value={object}>
+                                <SelectItem key={object} value={object} className={styles.colorBlack}>
                                     {object}
                                 </SelectItem>
                             ))}
@@ -151,9 +159,10 @@ const Calc = () => {
                             onChange={handleSelectionChange}
                             errorMessage={!service && touched ? "Поле не заполнено" : ""}
                             isInvalid={!service && touched ? true : false}
+                            className={styles.colorBlack}
                         >
                             {services.map((service) => (
-                                <SelectItem key={service} value={service}>
+                                <SelectItem key={service} value={service} className={styles.colorBlack}>
                                     {service}
                                 </SelectItem>
                             ))}
@@ -167,7 +176,7 @@ const Calc = () => {
                                 isInvalid={!work && touched ? true : false}
                             >
                                 {works.map((workOption) => (
-                                    <SelectItem key={workOption} value={workOption}>
+                                    <SelectItem key={workOption} value={workOption} className={styles.colorBlack}>
                                         {workOption}
                                     </SelectItem>
                                 ))}
@@ -181,7 +190,7 @@ const Calc = () => {
                             error={errors.area ? "Поле не заполнено" : ""}
                         />
                     </div>
-                    <Button className={styles.button} onClick={handleSubmit}>Рассчитать</Button>
+                    <Button className={buttonClass} onPress={handleSubmit}>Рассчитать</Button>
                 </div>
             </div>
         </section>

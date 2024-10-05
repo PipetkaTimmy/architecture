@@ -7,7 +7,7 @@ import ModalComponent from './Modal';
 const Licenses = () => {
     const [selectedImage, setSelectedImage] = useState();
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [backdrop, setBackdrop] = React.useState('blur')
+    const [backdrop, setBackdrop] = useState('blur')
 
     const handleImageClick = (imageSrc) => {
         setSelectedImage(imageSrc);

@@ -6,12 +6,28 @@ import Link from 'next/link';
 const Modal1 = ({ isOpen, onClose, }) => {
     const [expanded, setExpanded] = useState([]);
 
-    const handleButtonClick = (item) => {
-        setExpanded([`${item}`]);
+    const handleButtonPress = (item) => {
+        setExpanded((prevExpanded) => {
+            if (prevExpanded.includes(`${item}`)) {
+                return prevExpanded.filter(i => i !== `${item}`);
+            } else {
+                return [`${item}`];
+            }
+        });
     };
 
+
+    const sendMessage = (title) => {
+        const baseURL = 'https://wa.me/';
+        const phone = '77064213729';
+        const message = `Здравсвуйте, я интересуюсь услугой "${title}".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
+        const whatsappLink = `${baseURL}${phone}/?text=${message}`;
+
+        window.open(whatsappLink, '_blank');
+    }
+
     return (
-        <Modal size='full' isOpen={isOpen} onClose={onClose}>
+        <Modal size='full' isOpen={isOpen}>
             <ModalContent className={[styles.modalBg, styles.modalContainer]}>
                 <div className={styles.fixedImg}>
                     <img src="/modal/1.png" alt="" />
@@ -21,25 +37,33 @@ const Modal1 = ({ isOpen, onClose, }) => {
                         <img src="/modal/1.png" alt="" />
                     </div>
                     <div className={styles.modalHeader}>
-                        <h2 className={styles.modalTitle}>Узаконение квартир</h2>
-                        <div className={styles.modalNav}>
+                        <div className={styles.headerContainer}>
+                            <h2 className={styles.modalTitle}>Узаконение квартир</h2>
+                            <Button className={styles.closeBtnModal} isIconOnly onPress={() => onClose()}>
+                                <img src="/exit.png" alt="" />
+                            </Button>
+                        </div>
+                        {/* <div className={styles.modalNav}>
                             <h2 className={styles.typeOfWork}>Вид работы </h2>
                             <div className={styles.buttonWraper}>
-                                <Link href="/#accordion1" className={styles.modalNavBtn} onClick={() => handleButtonClick(1)}>Набор актов ввода в эксплуатацию</Link>
-                                <Link href="/#accordion2" className={styles.modalNavBtn} onClick={() => handleButtonClick(2)}>Перепланировка</Link>
-                                <Link href="/#accordion3" className={styles.modalNavBtn} onClick={() => handleButtonClick(3)}>Переоборудование</Link>
-                                <Link href="/#accordion4" className={styles.modalNavBtn} onClick={() => handleButtonClick(4)}>Присоединение балкона/ лоджии в полезную площадь квартиры</Link>
-                                <Link href="/#accordion5" className={styles.modalNavBtn} onClick={() => handleButtonClick(5)}>Объединение квартир</Link>
-                                <Link href="/#accordion6" className={styles.modalNavBtn} onClick={() => handleButtonClick(6)}>Разделение квартир</Link>
-                            </div>
-                            <div className={styles.grayBlocksWraper}>
+                                <Link href="/#accordion1" className={styles.modalNavBtn} onPress={() => handleButtonPress(1)}>Набор актов ввода в эксплуатацию</Link>
+                                <Link href="/#accordion2" className={styles.modalNavBtn} onPress={() => handleButtonPress(2)}>Перепланировка</Link>
+                                <Link href="/#accordion3" className={styles.modalNavBtn} onPress={() => handleButtonPress(3)}>Переоборудование</Link>
+                                <Link href="/#accordion4" className={styles.modalNavBtn} onPress={() => handleButtonPress(4)}>Присоединение балкона/ лоджии в полезную площадь квартиры</Link>
+                                <Link href="/#accordion5" className={styles.modalNavBtn} onPress={() => handleButtonPress(5)}>Объединение квартир</Link>
+                                <Link href="/#accordion6" className={styles.modalNavBtn} onPress={() => handleButtonPress(6)}>Разделение квартир</Link>
+                                <Link href="/#accordion7" className={styles.modalNavBtn} onPress={() => handleButtonPress(7)}>Перевод в нежилой фонд с отдельным входом при необходимости</Link>
+                                <Link href="/#accordion8" className={styles.modalNavBtn} onPress={() => handleButtonPress(8)}>Переоборудование нежилого помещения в квартиру</Link>
+                                <Link href="/#accordion9" className={styles.modalNavBtn} onPress={() => handleButtonPress(9)}>Захват общей площади  кондоминиума</Link>
+                            </div> */}
+                            {/* <div className={styles.grayBlocksWraper}>
                                 <div className={styles.grayBlock}>Перевод в нежилой фонд с отдельным входом при необходимости (<b>СКОРО</b>)</div>
-                                <div className={styles.grayBlock}>Захват общей части кондоминиума (часть подъезда включена в площадь квартиры) (<b>СКОРО</b>)</div>
-                            </div>
-                        </div>
+                                <div className={styles.grayBlock}>Переоборудование нежилого помещения в квартиру (<b>СКОРО</b>)</div>
+                            </div> */}
+                        {/* </div> */}
                     </div>
                     <Accordion className={styles.accordionWraper} selectedKeys={expanded}>
-                        <AccordionItem key="1" aria-label="Accordion 1" title="Набор актов ввода в эксплуатацию" className={styles.accordion} id='accordion1' onClick={() => handleButtonClick(1)}>
+                        <AccordionItem key="1" aria-label="Accordion 1" title="Набор актов ввода в эксплуатацию" className={styles.accordion} id='accordion1' onPress={() => handleButtonPress(1)}>
                             <div className={styles.accordionBody}>
                                 <div className={styles.topBlock}>
                                     <h2 className={styles.Accordion}>Что такое набор актов ввода в эксплуатацию?</h2>
@@ -52,15 +76,15 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>1 рабочий день</span>
                                     </div>
                                     <div className={styles.step2}>
-                                        <span>Срок работы</span>
+                                        <span>Стоимость работ</span>
                                         <span>от 10 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Набор актов ввода в эксплуатацию')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
                         </AccordionItem>
-                        <AccordionItem key="2" aria-label="Accordion 2" title="Перепланировка" className={styles.accordion} id='accordion2' onClick={() => handleButtonClick(2)}>
+                        <AccordionItem key="2" aria-label="Accordion 2" title="Перепланировка" className={styles.accordion} id='accordion2' onPress={() => handleButtonPress(2)}>
                             <div className={styles.accordionBody}>
                                 <div className={styles.topBlock}>
                                     <h2 className={styles.Accordion}>Что такое перепланировка?</h2>
@@ -84,15 +108,15 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>* с момента подписания договора</span>
                                     </div>
                                     <div className={styles.step2}>
-                                        <span>Срок работы</span>
+                                        <span>Стоимость работ</span>
                                         <span>от 60 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Перепланировка')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
                         </AccordionItem>
-                        <AccordionItem key="3" aria-label="Accordion 3" title="Переоборудование" className={styles.accordion} id='accordion3' onClick={() => handleButtonClick(3)}>
+                        <AccordionItem key="3" aria-label="Accordion 3" title="Переоборудование" className={styles.accordion} id='accordion3' onPress={() => handleButtonPress(3)}>
                             <div className={styles.accordionBody}>
                                 <div className={styles.topBlock}>
                                     <h2 className={styles.Accordion}>Что такое переоборудование?</h2>
@@ -115,15 +139,15 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>* с момента подписания договора</span>
                                     </div>
                                     <div className={styles.step2}>
-                                        <span>Срок работы</span>
+                                        <span>Стоимость работ</span>
                                         <span>от 70 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Переоборудование')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
                         </AccordionItem>
-                        <AccordionItem key="4" aria-label="Accordion 3" title="Присоединение балкона/ лоджии в полезную площадь квартиры" className={styles.accordion} id='accordion4' onClick={() => handleButtonClick(4)}>
+                        <AccordionItem key="4" aria-label="Accordion 3" title="Присоединение балкона/ лоджии в полезную площадь квартиры" className={styles.accordion} id='accordion4' onPress={() => handleButtonPress(4)}>
                             <div className={styles.accordionBody}>
                                 <div className={styles.topBlock}>
                                     <h2 className={styles.Accordion}>Что такое присоединение балкона/ лоджии в полезную площадь квартиры?</h2>
@@ -149,15 +173,15 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>* с момента подписания договора</span>
                                     </div>
                                     <div className={styles.step2}>
-                                        <span>Срок работы</span>
+                                        <span>Стоимость работ</span>
                                         <span>от 70 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Присоединение балкона/ лоджии в полезную площадь квартиры')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
                         </AccordionItem>
-                        <AccordionItem key="5" aria-label="Accordion 3" title="Объединение квартир" className={styles.accordion} id='accordion5' onClick={() => handleButtonClick(5)}>
+                        <AccordionItem key="5" aria-label="Accordion 3" title="Объединение квартир" className={styles.accordion} id='accordion5' onPress={() => handleButtonPress(5)}>
                             <div className={styles.accordionBody}>
                                 <div className={styles.topBlock}>
                                     <h2 className={styles.Accordion}>Что такое Объединение квартир? </h2>
@@ -183,15 +207,15 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>* с момента подписания договора</span>
                                     </div>
                                     <div className={styles.step2}>
-                                        <span>Срок работы</span>
+                                        <span>Стоимость работ</span>
                                         <span>от 150 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Разделение квартир')} >Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>
                         </AccordionItem>
-                        <AccordionItem key="6" aria-label="Accordion 3" title="Разделение квартир" className={styles.accordion} id='accordion6' onClick={() => handleButtonClick(6)}>
+                        <AccordionItem key="6" aria-label="Accordion 3" title="Разделение квартир" className={styles.accordion} id='accordion6' onPress={() => handleButtonPress(6)}>
                             <div className={styles.accordionBody}>
                                 <div className={styles.topBlock}>
                                     <h2 className={styles.Accordion}>Что такое Разделение квартир?  </h2>
@@ -216,10 +240,124 @@ const Modal1 = ({ isOpen, onClose, }) => {
                                         <span>* с момента подписания договора</span>
                                     </div>
                                     <div className={styles.step2}>
-                                        <span>Срок работы</span>
+                                        <span>Стоимость работ</span>
                                         <span>от 160 000 тенге.</span>
                                         <span>*стоимость рассчитывается от сложности и квадратуры объекта</span>
-                                        <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Разделение квартир')}>Заказать услугу</Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </AccordionItem>
+                        <AccordionItem key="7" aria-label="Accordion 3" title="Перевод в нежилой фонд с отдельным входом при необходимости" className={styles.accordion} id='accordion7' onPress={() => handleButtonPress(7)}>
+                            <div className={styles.accordionBody}>
+                                <div className={styles.topBlock}>
+                                    <h2 className={styles.Accordion}>Что такое переоборудование квартиры в нежилой фонд?  </h2>
+                                    <span>Переоборудование квартиры в нежилое помещение является технически сложной операцией. В данном случае затрагиваются инженерные коммуникации, так как изменяется функциональное назначения. Для его изменения необходимо получить согласия жильцов дома, разработать технический проект и получить разрешение от местного исполнительного органа. В случае, если есть замысел пристроить входную часть группы, то процесс становится сложнее, ввиду получения земельного участка под входную группу.</span>
+                                </div>
+                                <div className={styles.preSteps}>
+                                    <h2>Этапы работы </h2>
+                                    <div className={styles.preStepsWraper}>
+                                        <div>Предварительная экспертиза</div>
+                                        <div>Заключение Договора</div>
+                                        <div>Набор технического проекта</div>
+                                        <div>Получения Решения и АПЗ с ГУ «УАГиЗО»</div>
+                                        <div>Прохождение частной вневедомственной экспертизы</div>
+                                        <div>Уведомления ГАСК о начале строительно-монтажных работ</div>
+                                        <div>Заполнение декларации о соответствии выполненных работ с коммунальными службами</div>
+                                        <div>Авторский надзор (заключение о выполненных работ по проекту)</div>
+                                        <div>Технический надзор (заключение о качестве строительно-монтажных работ)</div>
+                                        <div>Заказ технического паспорта</div>
+                                        <div>Заполнение актов ввода объекта в эксплуатацию</div>
+                                        <div>Регистрация актов ввода в уполномоченных государственных органах</div>
+                                    </div>
+                                </div>
+                                <div className={styles.steps}>
+                                    <div className={styles.step1}>
+                                        <span>Срок работы</span>
+                                        <span>60 рабочих дней</span>
+                                        <span>* с момента подписания договора</span>
+                                    </div>
+                                    <div className={styles.step2}>
+                                        <span></span>
+                                        <span></span>
+                                        <span>Стоимость работ – по договоренности</span>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Переоборудование квартиры в нежилое помещение')}>Заказать услугу</Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </AccordionItem>
+                        <AccordionItem key="8" aria-label="Accordion 3" title="Переоборудование нежилого помещения в квартиру" className={styles.accordion} id='accordion8' onPress={() => handleButtonPress(8)}>
+                            <div className={styles.accordionBody}>
+                                <div className={styles.topBlock}>
+                                    <h2 className={styles.Accordion}>Что такое переоборудование нежилого помещения в квартиру?</h2>
+                                    <span>Переоборудование нежилого помещения к квартире также является технически сложным объектом, за счет изменения функционального назначения (изменение инженерных систем и коммуникаций). Общая квадратура нежилого помещения не должна быть ниже 28 кв.м. – это является императивным требованием. В данном случае также необходимо согласие не менее 70% жильцов дома, разрешение на проектирование, экспертиза. Наша команда сможет без труда помочь в вашем вопросе узаконения.</span>
+                                </div>
+                                <div className={styles.preSteps}>
+                                    <h2>Этапы работы </h2>
+                                    <div className={styles.preStepsWraper}>
+                                        <div>Предварительная экспертиза</div>
+                                        <div>Заключение Договора</div>
+                                        <div>Набор технического проекта</div>
+                                        <div>Получения Решения и АПЗ с ГУ «УАГиЗО»</div>
+                                        <div>Прохождение частной вневедомственной экспертизы</div>
+                                        <div>Уведомления ГАСК о начале строительно-монтажных работ</div>
+                                        <div>Заполнение декларации о соответствии выполненных работ с коммунальными службами</div>
+                                        <div>Авторский надзор (заключение о выполненных работ по проекту)</div>
+                                        <div>Технический надзор (заключение о качестве строительно-монтажных работ)</div>
+                                        <div>Заказ технического паспорта</div>
+                                        <div>Заполнение актов ввода объекта в эксплуатацию</div>
+                                        <div>Регистрация актов ввода в уполномоченных государственных органах</div>
+                                    </div>
+                                </div>
+                                <div className={styles.steps}>
+                                    <div className={styles.step1}>
+                                        <span>Срок работы</span>
+                                        <span>55 рабочих дней</span>
+                                        <span>* с момента подписания договора</span>
+                                    </div>
+                                    <div className={styles.step2}>
+                                        <span></span>
+                                        <span></span>
+                                        <span>Стоимость работ – от 700 000 (семиста тысяч) тенге</span>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Переоборудование нежилого помещения в квартиру')}>Заказать услугу</Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </AccordionItem>
+                        <AccordionItem key="9" aria-label="Accordion 3" title="Захват общей площади  кондоминиума" className={styles.accordion} id='accordion9' onPress={() => handleButtonPress(9)}>
+                            <div className={styles.accordionBody}>
+                                <div className={styles.topBlock}>
+                                    <h2 className={styles.Accordion}>Что такое захват общей площади  кондоминиума(часть подъезда включена в площадь квартиры)?</h2>
+                                    <span>В данном случае расширение территории происходит за счет изменения ограждающей конструкции. Часть площади подъезда присоединяется к площади квартиры, есть предел присоединения – нельзя захватывать лифтовую/лестничную часть, также электролический щиток недопустим к присоедению к квартире. Перед началом строительства требуется собрать согласие жильцов жилого дома, разработать технический проект и получить Решение с Управления архитектуры, градостроительства и земельных отношений, в дальнейшем пройти экспертизу и вводить в эксплуатацию. Обращайтесь за бесплатной консультацией в NOMAD!</span>
+                                </div>
+                                <div className={styles.preSteps}>
+                                    <h2>Этапы работы </h2>
+                                    <div className={styles.preStepsWraper}>
+                                        <div>Предварительная экспертиза</div>
+                                        <div>Заключение Договора</div>
+                                        <div>Набор технического проекта</div>
+                                        <div>Получения Решения и АПЗ с ГУ «УАГиЗО»</div>
+                                        <div>Прохождение частной вневедомственной экспертизы</div>
+                                        <div>Уведомления ГАСК о начале строительно-монтажных работ</div>
+                                        <div>Заполнение декларации о соответствии выполненных работ с коммунальными службами</div>
+                                        <div>Авторский надзор (заключение о выполненных работ по проекту)</div>
+                                        <div>Технический надзор (заключение о качестве строительно-монтажных работ)</div>
+                                        <div>Заказ технического паспорта</div>
+                                        <div>Заполнение актов ввода объекта в эксплуатацию</div>
+                                        <div>Регистрация актов ввода в уполномоченных государственных органах</div>
+                                    </div>
+                                </div>
+                                <div className={styles.steps}>
+                                    <div className={styles.step1}>
+                                        <span>Срок работы</span>
+                                        <span>55 рабочих дней</span>
+                                        <span>* с момента подписания договора</span>
+                                    </div>
+                                    <div className={styles.step2}>
+                                        <span></span>
+                                        <span></span>
+                                        <span>Стоимость работ – от 700 000 (семиста тысяч) тенге</span>
+                                        <Button className={styles.accordionBtn} onPress={() => sendMessage('Переоборудование нежилого помещения в квартиру')}>Заказать услугу</Button>
                                     </div>
                                 </div>
                             </div>

@@ -6,32 +6,50 @@ import Link from 'next/link';
 const Modal3 = ({ isOpen, onClose, }) => {
   const [expanded, setExpanded] = useState([]);
 
-  const handleButtonClick = (item) => {
-    setExpanded([`${item}`]);
-  };
+  const handleButtonPress = (item) => {
+        setExpanded((prevExpanded) => {
+            if (prevExpanded.includes(`${item}`)) {
+                return prevExpanded.filter(i => i !== `${item}`);
+            } else {
+                return [`${item}`];
+            }
+        });
+    };
+  const sendMessage = (title) => {
+    const baseURL = 'https://wa.me/';
+    const phone = '77064213729';
+    const message = `Здравсвуйте, я интересуюсь услугой "${title}".%0aЯ хотел(а) бы узнать больше о данной услуге. Не могли бы вы подробнее рассказать о том, что вы предлагаете?`;
+    const whatsappLink = `${baseURL}${phone}/?text=${message}`;
 
+    window.open(whatsappLink, '_blank');
+  }
   return (
     <Modal size='full' isOpen={isOpen} onClose={onClose}>
       <ModalContent className={[styles.modalBg, styles.modalContainer]}>
         <div className={styles.fixedImg}>
-          <img src="/modal/3.png" alt="" />
+          <img src="/modal/3.png" alt=""/>
         </div>
         <div className={styles.content}>
           <div className={styles.fixedImgMob}>
             <img src="/modal/3.png" alt="" />
           </div>
           <div className={styles.modalHeader}>
-            <h2 className={styles.modalTitle}>Проектирование</h2>
-            <div className={styles.modalNav}>
+            <div className={styles.headerContainer}>
+              <h2 className={styles.modalTitle}>Проектирование</h2>
+              <Button className={styles.closeBtnModal} isIconOnly onPress={() => onClose()}>
+                <img src="/exit.png" alt="" />
+              </Button>
+            </div>
+            {/* <div className={styles.modalNav}>
               <h2 className={styles.typeOfWork}>Вид работы </h2>
               <div className={styles.buttonWraper}>
-                <Link href="/#accordion1" className={styles.modalNavBtn} onClick={() => handleButtonClick(1)}>Технический проект</Link>
-                <Link href="/#accordion2" className={styles.modalNavBtn} onClick={() => handleButtonClick(2)}>Эскизный проект</Link>
+                <Link href="/#accordion1" className={styles.modalNavBtn} onPress={() => handleButtonPress(1)}>Технический проект</Link>
+                <Link href="/#accordion2" className={styles.modalNavBtn} onPress={() => handleButtonPress(2)}>Эскизный проект</Link>
               </div>
-            </div>
+            </div> */}
           </div>
           <Accordion className={styles.accordionWraper} selectedKeys={expanded}>
-            <AccordionItem key="1" aria-label="Accordion 1" title="Технический проект" className={styles.accordion} id='accordion1' onClick={() => handleButtonClick(1)}>
+            <AccordionItem key="1" aria-label="Accordion 1" title="Технический проект" className={styles.accordion} id='accordion1' onPress={() => handleButtonPress(1)}>
               <div className={styles.accordionBody}>
                 <div className={styles.topBlock}>
                   <h2 className={styles.Accordion}>Что такое технический проект?</h2>
@@ -58,15 +76,15 @@ const Modal3 = ({ isOpen, onClose, }) => {
                     <span>*в срок оказания услуг не входит срок рассмотрения в  ГУ “Управления архитектуры, градостроительства и земельных отношений”.</span>
                   </div>
                   <div className={styles.step2}>
-                    <span>Срок работы</span>
+                    <span>Стоимость работ</span>
                     <span>от 100 000 тенге.</span>
                     <span>*рассчитывается на основании сложности проекта</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onPress={()=>sendMessage('Технический проект')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
             </AccordionItem>
-            <AccordionItem key="2" aria-label="Accordion 2" title="Эскизный проект" className={styles.accordion} id='accordion2' onClick={() => handleButtonClick(2)}>
+            <AccordionItem key="2" aria-label="Accordion 2" title="Эскизный проект" className={styles.accordion} id='accordion2' onPress={() => handleButtonPress(2)}>
               <div className={styles.accordionBody}>
                 <div className={styles.topBlock}>
                   <h2 className={styles.Accordion}>Что такое Эскизный проект?</h2>
@@ -91,10 +109,10 @@ const Modal3 = ({ isOpen, onClose, }) => {
                     <span>*в срок оказания услуг не входит срок рассмотрений АПЗ и Согласования проекта ГУ “Управления архитектуры, градостроительства и земельных отношений”</span>
                   </div>
                   <div className={styles.step2}>
-                    <span>Срок работы</span>
+                    <span>Стоимость работ</span>
                     <span>от 80 000 тенге.</span>
                     <span>*рассчитывается на основании сложности проекта</span>
-                    <Button className={styles.accordionBtn}>Заказать услугу</Button>
+                    <Button className={styles.accordionBtn} onPress={()=>sendMessage('Эскизный проект')}>Заказать услугу</Button>
                   </div>
                 </div>
               </div>
