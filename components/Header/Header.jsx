@@ -17,14 +17,14 @@ const Header = () => {
                 <div className="navbar">
                     <img src="/logo.svg" alt="" />
                     <div className="navigation">
-                        <Link href="/#services" className={styles.hoverLink}>Услуги</Link>
                         <Link href="/#calc" className={styles.hoverLink}>Расчет стоимости</Link>
+                        <Link href="/#services" className={styles.hoverLink}>Услуги</Link>
                         <Link href="/#faq" className={styles.hoverLink}>Полезная информация</Link>
                         <Link href="/#licenses" className={styles.hoverLink}>Лицензия</Link>
                         <Link href="/#footer" className={styles.hoverLink}>Контакты</Link>
                         {/* <a href="tel:+77064213729"><Button className={styles.mobileBlock}> +7 706 421 37 29</Button></a> */}
-                        <a href="tel:+77064213729">+7 706 421 37 29</a>
                     </div>
+                    <a href="tel:+77064213729" className={styles.number}>+7 706 421 37 29</a>
                     <div className='navMob'>
                         <Button className='navBtn' onPress={() => changeMenu()}>
                             <img src="/menu.svg" alt="" />
