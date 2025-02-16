@@ -4,6 +4,8 @@ import { Select, SelectItem } from "@nextui-org/select";
 import { Button } from "@nextui-org/button";
 import styles from "./calc.module.css";
 
+const googleSheetsUrl = "https://script.google.com/macros/s/AKfycbxOWMu6XIU-edspzCBhuzzNeFXl1tlqQ3xW_FMMNEFUmAj56IqLnladiTC0bR_Q3P49FQ/exec";
+
 const Calc = () => {
     const [name, setName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -28,20 +30,25 @@ const Calc = () => {
 
     const buttonClass = isFormValid() ? styles.buttonActive : styles.buttonInactive;
 
-
     const objects = ["Квартира", "Жилой дом (хоз. постройки)", "Коммерческое помещение (н.п., в.п.)", "Иное"];
     const services = ["Узаконение квартир", "Жилой дом и хозяйственно-бытовые постройки", "Проектирование", "Коммерческие помещения", "Юридическое сопровождение"];
-
     const apartment_legalization = ["Набор актов ввода в эксплуатацию", "Перепланировка", "Присоединение балкона/ лоджии в полезную площадь квартиры", "Объединение квартир", "Разделение квартир"];
     const residential_buildings_and_household_structures = ["Перепланировка и переоборудование жилого дома и хоз.бытовых построек", "Разделение жилого дома", "Узаконение сноса", "Узаконение нового строительства"];
     const design = ["Технический проект", "Эскизный проект"];
     const commercial_premises = ["Перепланировка нежилого помещения", "Разделение нежилого помещения", "Объединение нежилых помещений"];
-    const legal_support = ["Сопровождение по земельным отношениям",
-        "Предоставления аренды земельного участка (без участия на торгах)", "Продление аренды земельного участка", "Выделение долей земельного участка", "Сопровождение по получению разрешительных документов  на проектирование и строительство", "Сопровождение по прохождению частной вневедомственной экспертиза", "Сопровождение по вводу объекта в эксплуатацию и его сносу", "Заполнение декларации о соответствии выполненных работ"];
+    const legal_support = [
+        "Сопровождение по земельным отношениям",
+        "Предоставления аренды земельного участка (без участия на торгах)",
+        "Продление аренды земельного участка",
+        "Выделение долей земельного участка",
+        "Сопровождение по получению разрешительных документов на проектирование и строительство",
+        "Сопровождение по прохождению частной вневедомственной экспертиза",
+        "Сопровождение по вводу объекта в эксплуатацию и его сносу",
+        "Заполнение декларации о соответствии выполненных работ",
+    ];
 
     const handleSelectionChange = (e) => {
-        setTouched(true)
-        console.log(touched);
+        setTouched(true);
         setService(e.target.value);
         switch (e.target.value) {
             case "Узаконение квартир":
@@ -65,7 +72,7 @@ const Calc = () => {
         }
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const newErrors = {};
         let hasError = false;
 
@@ -99,24 +106,38 @@ const Calc = () => {
             return;
         }
 
-        console.log("Имя:", name);
-        console.log("Номер телефона:", phoneNumber);
-        console.log("Объект:", object);
-        console.log("Услуга:", service);
-        console.log("Вид работы:", work);
-        console.log("Площадь:", area);
+        const formData = {
+            name,
+            phoneNumber,
+            object,
+            service,
+            work,
+            area,
+        };
 
-        const baseURL = 'https://wa.me/';
-        const phone = '77064213729';
-        const message = `Имя: ${name}%0aНомер телефона: ${phoneNumber}%0aОбъект: ${object}%0aУслуга: ${service}%0aВид работы: ${work}%0aПлощадь: ${area}`;
-        // const message = 'Name: %0a Dim';
-        const whatsappLink = `${baseURL}${phone}/?text=${message}`;
+        try {
+            const response = await fetch(googleSheetsUrl, {
+                redirect: "follow",
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Content-Type": "text/plain",
+                },
+                body: JSON.stringify(formData),
+            });
 
-        window.open(whatsappLink, '_blank');
+            if (!response.ok) {
+                throw new Error("Ошибка при отправке данных в Google Таблицы");
+            }
+            alert('Заявка отправлена, с Вами свяжутся в ближайшее время')
+
+        } catch (error) {
+            alert('Заявка отправлена, с Вами свяжутся в ближайшее время')
+        }
     };
 
     return (
-        <section className='container' id="calc">
+        <section className="container" id="calc">
             <div className={styles.calcContainer}>
                 <img src="/calc.png" alt="" />
                 <div className={styles.inputContainer}>
@@ -190,7 +211,9 @@ const Calc = () => {
                             error={errors.area ? "Поле не заполнено" : ""}
                         />
                     </div>
-                    <Button className={buttonClass} onPress={handleSubmit}>Рассчитать</Button>
+                    <Button className={buttonClass} onPress={handleSubmit}>
+                        Отправить
+                    </Button>
                 </div>
             </div>
         </section>
