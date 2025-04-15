@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Input } from "@nextui-org/input";
-import { Select, SelectItem } from "@nextui-org/select";
-import { Button } from "@nextui-org/button";
+import { Input } from "@heroui/input";
+import { Select, SelectItem } from "@heroui/select";
+import { Button } from "@heroui/button";
 import styles from "./calc.module.css";
 
 const googleSheetsUrl = "https://script.google.com/macros/s/AKfycbxOWMu6XIU-edspzCBhuzzNeFXl1tlqQ3xW_FMMNEFUmAj56IqLnladiTC0bR_Q3P49FQ/exec";

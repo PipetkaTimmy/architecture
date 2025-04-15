@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './licenses.module.css';
-import { useDisclosure, Button } from "@nextui-org/react";
+import { useDisclosure, Button } from "@heroui/react";
 import ModalComponent from './Modal';
 
 

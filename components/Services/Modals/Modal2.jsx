@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, ModalContent, Button, Accordion, AccordionItem } from "@nextui-org/react";
+import { Modal, ModalContent, Button, Accordion, AccordionItem } from "@heroui/react";
 import styles from '../services.module.css'
 import Link from 'next/link';
 

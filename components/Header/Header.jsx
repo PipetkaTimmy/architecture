@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import styles from './header.module.css'
 import Link from "next/link";
-import { Button } from "@nextui-org/button";
-
+import {
+    Button,
+    useDisclosure,
+} from "@heroui/react";
+import HeaderModal from './HeaderModal';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const changeMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -70,7 +74,8 @@ const Header = () => {
                     <h1 className='title text-white'>Архитектурное проектирование и узаконение недвижимости <br /> “под ключ” </h1>
                     {/* <p className={`${styles.addText} text-white`}>Открой новые горизонты с Nomad:
                         Воплощаем историю в современных проектах!</p> */}
-                    <Button className={styles.headerButton} onPress={() => window.open('https://wa.me/77064213729/?text=Здравствуйте! Пишу Вам с сайта nomadstroyproject.kz%0a Я хотел(а) бы узнать больше о предоставляемых Вами услугах.', '_blank')}>Бесплатная консультация</Button>
+                    {/* <Button className={styles.headerButton} onPress={() => window.open('https://wa.me/77064213729/?text=Здравствуйте! Пишу Вам с сайта nomadstroyproject.kz%0a Я хотел(а) бы узнать больше о предоставляемых Вами услугах.', '_blank')}>Бесплатная консультация</Button> */}
+                    <Button className={styles.headerButton} onPress={onOpen}>Бесплатная консультация</Button>
                 </div>
                 <div className={styles.headerDopText}>
                     <ul>Открой новые горизонты с Nomad: 
@@ -79,6 +84,7 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
+            <HeaderModal isOpen={isOpen} onOpenChange={onOpenChange}/>
         </section>
     )
 }

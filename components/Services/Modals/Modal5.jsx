@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, ModalContent, Button } from "@nextui-org/react";
+import { Modal, ModalContent, Button } from "@heroui/react";
 import styles from '../services.module.css'
 
 const Modal5 = ({ isOpen, onClose, }) => {

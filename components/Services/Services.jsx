@@ -1,7 +1,7 @@
 'use client'
 import styles from './services.module.css'
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
-import { Button, useDisclosure } from '@nextui-org/react';
+import { Button, useDisclosure } from '@heroui/react';
 import Modal1 from './Modals/Modal1';
 import Modal2 from './Modals/Modal2';
 import Modal3 from './Modals/Modal3';

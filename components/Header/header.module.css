@@ -95,6 +95,25 @@
     margin-left: 20px;
 }
 
+.colorBlack{
+    color: #151515;
+}
+
+.headerModalBtn{
+    background-color: #6ba64c;
+    color: #fff;
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
+.error{
+    color: #f31260;
+}
+
+.success{
+    color: #17c964;
+}
+
 @media (max-width:901px) {
     .header {
         margin: 0;
