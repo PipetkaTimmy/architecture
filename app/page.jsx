@@ -1,24 +1,23 @@
-'use client'
-import Header from "@/components/Header/Header";
-import Services from '@/components/Services/Services';
-import Calc from "@/components/Calc/Calc";
-import FAQ1 from "@/components/FirstFAQ/FAQ";
-import FAQ2 from "@/components/SecondFAQ/FAQ";
-import Licenses from "@/components/Licenses/Licenses";
-import Location from "@/components/Location/Location";
-import Footer from "@/components/Footer/Footer";
+import Counter from "@/components/Home/Counter";
+import Desc from "@/components/Home/Desc";
+import EventFeed from "@/components/Home/EventFeed/EventFeed";
+import Mission from "@/components/Home/Mission/Mission";
+import Map from "@/components/Home/Map/Map";
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <Calc />
-      <Services />
-      <FAQ1 />
-      <FAQ2 />
-      <Licenses />
-      <Location />
-      <Footer />
-    </main>
+    <div>
+      <section className="heroSection">
+        <div className="heroComponents containerCustom">
+          <Desc />
+          <Counter />
+        </div>
+      </section>
+      <div className="containerCustom p-21">
+        <Mission />
+        <EventFeed/>
+        <Map/>
+      </div>
+    </div>
   );
 }
