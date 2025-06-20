@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
+import loadTranslations from '@/utils/getTranslations';
 
 // Функция для декодирования Unicode-экранированных строк
 const decodeUnicode = (str) => {
@@ -10,20 +12,32 @@ const decodeUnicode = (str) => {
 };
 
 const FooterNews = () => {
+  const { language } = useLanguage();
+  const [translations, setTranslations] = useState({});
   const [news, setNews] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const fetchTranslations = async () => {
+      const trans = await loadTranslations('Footer', language);
+      setTranslations(trans);
+    };
+    fetchTranslations();
+  }, [language]);
+
+  useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch('https://admin.ubw.kz/api/news?page=1&per_page=3&with_body_text=true');
+        const response = await fetch(
+          'https://admin.ubw.kz/api/news?page=1&per_page=3&with_body_text=true'
+        );
         if (!response.ok) {
-          throw new Error('Не удалось загрузить новости');
+          throw new Error(translations.FooterNews?.error || 'Не удалось загрузить новости');
         }
         const data = await response.json();
         const decodedNews = data.data.map((item) => ({
           ...item,
-          title: decodeUnicode(item.title),
+          title: decodeUnicode(item[`title_${language}`] || item.title),
         }));
         setNews(decodedNews);
       } catch (err) {
@@ -33,15 +47,19 @@ const FooterNews = () => {
     };
 
     fetchNews();
-  }, []);
+  }, [language, translations]);
 
   if (error) {
-    return <div className="footerNewsWrapper">Ошибка: {error}</div>;
+    return (
+      <div className="footerNewsWrapper">
+        {translations.FooterNews?.error || 'Ошибка: Не удалось загрузить новости'}
+      </div>
+    );
   }
 
   return (
     <div className="footerNewsWrapper">
-      <h2>Новости</h2>
+      <h2>{translations.FooterNews?.title || 'Новости'}</h2>
       <div className="footerNews">
         {news.length > 0 ? (
           news.map((item) => (
@@ -51,7 +69,7 @@ const FooterNews = () => {
                 <div>
                   <div className="footerNewsBlockTitle">{item.title}</div>
                   <div className="footerNewsBlockDate">
-                    {new Date(item.created_at).toLocaleDateString('ru-RU', {
+                    {new Date(item.created_at).toLocaleDateString(`${language}-KZ`, {
                       day: 'numeric',
                       month: 'long',
                       year: 'numeric',
@@ -62,27 +80,38 @@ const FooterNews = () => {
             </Link>
           ))
         ) : (
-          // Заглушка на время загрузки
           <>
             <div className="footerNewsBlock">
               <img src="/footer/news1.png" alt="" />
               <div>
-                <div className="footerNewsBlockTitle">Загрузка...</div>
-                <div className="footerNewsBlockDate">Загрузка...</div>
+                <div className="footerNewsBlockTitle">
+                  {translations.FooterNews?.loading || 'Загрузка...'}
+                </div>
+                <div className="footerNewsBlockDate">
+                  {translations.FooterNews?.loading || 'Загрузка...'}
+                </div>
               </div>
             </div>
             <div className="footerNewsBlock">
               <img src="/footer/news1.png" alt="" />
               <div>
-                <div className="footerNewsBlockTitle">Загрузка...</div>
-                <div className="footerNewsBlockDate">Загрузка...</div>
+                <div className="footerNewsBlockTitle">
+                  {translations.FooterNews?.loading || 'Загрузка...'}
+                </div>
+                <div className="footerNewsBlockDate">
+                  {translations.FooterNews?.loading || 'Загрузка...'}
+                </div>
               </div>
             </div>
             <div className="footerNewsBlock">
               <img src="/footer/news1.png" alt="" />
               <div>
-                <div className="footerNewsBlockTitle">Загрузка...</div>
-                <div className="footerNewsBlockDate">Загрузка...</div>
+                <div className="footerNewsBlockTitle">
+                  {translations.FooterNews?.loading || 'Загрузка...'}
+                </div>
+                <div className="footerNewsBlockDate">
+                  {translations.FooterNews?.loading || 'Загрузка...'}
+                </div>
               </div>
             </div>
           </>

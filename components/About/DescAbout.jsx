@@ -1,24 +1,36 @@
-import { Button } from '@heroui/react'
-import React from 'react'
+'use client';
+import { Button } from '@heroui/react';
+import React, { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import loadTranslations from '@/utils/getTranslations';
+import Link from 'next/link';
 
 const DescAbout = () => {
-    return (
-        <div className='descComponent'>
-            <h1>
-                О нашем потребительском
-                кооперативе
-            </h1>
-            <h2>
-                Надёжное сообщество членов кооперативов, строящее своё будущее
-            </h2>
-            <Button className='lightBtn'>
-                Рассчет стоимости ОН
-            </Button>
-            <span className='text-white'>
-                *ОН - объект недвижимости
-            </span>
-        </div>
-    )
-}
+  const { language } = useLanguage();
+  const [translations, setTranslations] = useState({});
 
-export default DescAbout
+  useEffect(() => {
+    const fetchTranslations = async () => {
+      const trans = await loadTranslations('About', language);
+      setTranslations(trans);
+    };
+    fetchTranslations();
+  }, [language]);
+
+  return (
+    <div className='descComponent'>
+      <h1>{translations.DescAbout?.title || 'О нашем потребительском кооперативе'}</h1>
+      <h2>{translations.DescAbout?.subtitle || 'Надёжное сообщество членов кооперативов, строящее своё будущее'}</h2>
+      <Link href="https://kz.bww.global/login">
+        <Button className='lightBtn'>
+          {translations.DescAbout?.button || 'Рассчет стоимости ОН'}
+        </Button>
+      </Link>
+      <span className='text-white'>
+        {translations.DescAbout?.note || '*ОН - объект недвижимости'}
+      </span>
+    </div>
+  );
+};
+
+export default DescAbout;

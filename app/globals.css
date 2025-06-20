@@ -330,6 +330,20 @@ body {
   padding: 20px 16px;
   width: 100%;
   max-width: 285px;
+  height: 100%;
+}
+
+.mapDescInfo img {
+  width: 26px;
+  height: 26px;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
 }
 
 .interactiveMap img {
@@ -449,6 +463,11 @@ footer ul {
   font-size: 15px;
   line-height: 140%;
   color: #AAAAAA;
+}
+
+.langText{
+  display: flex;
+  gap: 8px;
 }
 
 .black {
@@ -611,9 +630,74 @@ footer ul {
 }
 
 .contactImg {
-  max-width: 758px;
   width: 100%;
-  height: 410px;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.language-switcher button.active {
+  background-color: #f97316;
+  color: white;
+}
+
+.language-switcher-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+  color: #232323;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.language-switcher-item-mobile .language-switcher-trigger{
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+  color: #232323;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.language-arrow {
+  font-size: 0.7rem;
+  margin-left: 2px;
+  color: #555;
+}
+
+.navElement {}
+
+.flag-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.language-switcher-trigger:hover {
+  background-color: #f5f5f5;
+}
+
+.contactImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mapWrapper {
@@ -945,6 +1029,7 @@ css .navbar {
     text-align: center;
     padding: 8px;
     margin-top: 42px;
+    justify-content: center
   }
 
   .heroSection {
@@ -953,20 +1038,20 @@ css .navbar {
     background-position: center;
   }
 
-  .missionAutor span:first-child{
+  .missionAutor span:first-child {
     font-size: 22px;
     margin-top: 24px;
   }
 
-  .sectionTitle{
+  .sectionTitle {
     font-size: 24px;
   }
-  
+
   .descComponent h1 {
     font-size: 32px;
   }
 
-  .descComponent h2{
+  .descComponent h2 {
     font-size: 16px;
   }
 
@@ -1035,20 +1120,22 @@ css .navbar {
     font-size: 24px;
   }
 
-  .hero2Section{
+  .hero2Section {
     padding: 0;
     background-position: 70%;
   }
 
-  .aboutBlock{
+  .aboutBlock {
     flex-direction: column;
     margin-bottom: 21px;
   }
-  .aboutBlockImg{
+
+  .aboutBlockImg {
     height: auto;
+    max-width: 100%;
   }
 
-  .advantagesWrapper{
+  .advantagesWrapper {
     grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
     gap: 10px;
     margin-bottom: 21px;
@@ -1058,7 +1145,7 @@ css .navbar {
     height: 175px;
   }
 
-  .advantagesInfo{
+  .advantagesInfo {
     height: 96px;
     font-size: 14px;
     align-items: center;
@@ -1068,24 +1155,37 @@ css .navbar {
     justify-content: center;
   }
 
-  .aboutBlockText div:first-child{
-    font-size: 20px;
-  }
-
-  .eventBlock{
-    margin: 0 auto;
-  }
-
-  .contactImg{
+  .language-switcher-item{
     display: none;
   }
 
-  .mapWrapper{
+  .language-switcher-item-mobile .language-switcher-trigger{
+    display: flex;
+  }
+
+  .aboutBlockText {
+    max-width: 100%;
+  }
+
+  .aboutBlockText div:first-child {
+    font-size: 20px;
+  }
+
+  .eventBlock {
+    margin: 0 auto;
+  }
+
+  .contactImg {
+    display: none;
+  }
+
+  .mapWrapper {
     height: 400px;
   }
 
-  .mapWrapper img{
+  .mapWrapper img {
     height: 100%;
     object-fit: cover;
+    width: 100%;
   }
 }

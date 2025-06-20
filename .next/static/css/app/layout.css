@@ -3669,6 +3669,20 @@ body {
   padding: 20px 16px;
   width: 100%;
   max-width: 285px;
+  height: 100%;
+}
+
+.mapDescInfo img {
+  width: 26px;
+  height: 26px;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
 }
 
 .interactiveMap img {
@@ -3790,6 +3804,11 @@ footer ul {
   font-size: 15px;
   line-height: 140%;
   color: #AAAAAA;
+}
+
+.langText{
+  display: flex;
+  gap: 8px;
 }
 
 .black {
@@ -3948,9 +3967,76 @@ footer ul {
 }
 
 .contactImg {
-  max-width: 758px;
   width: 100%;
-  height: 410px;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.language-switcher button.active {
+  background-color: #f97316;
+  color: white;
+}
+
+.language-switcher-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+  color: #232323;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.language-switcher-item-mobile .language-switcher-trigger{
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+  color: #232323;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.language-arrow {
+  font-size: 0.7rem;
+  margin-left: 2px;
+  color: #555;
+}
+
+.navElement {}
+
+.flag-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.language-switcher-trigger:hover {
+  background-color: #f5f5f5;
+}
+
+.contactImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .mapWrapper {
@@ -4282,6 +4368,7 @@ css .navbar {
     text-align: center;
     padding: 8px;
     margin-top: 42px;
+    justify-content: center
   }
 
   .heroSection {
@@ -4290,20 +4377,20 @@ css .navbar {
     background-position: center;
   }
 
-  .missionAutor span:first-child{
+  .missionAutor span:first-child {
     font-size: 22px;
     margin-top: 24px;
   }
 
-  .sectionTitle{
+  .sectionTitle {
     font-size: 24px;
   }
-  
+
   .descComponent h1 {
     font-size: 32px;
   }
 
-  .descComponent h2{
+  .descComponent h2 {
     font-size: 16px;
   }
 
@@ -4372,20 +4459,22 @@ css .navbar {
     font-size: 24px;
   }
 
-  .hero2Section{
+  .hero2Section {
     padding: 0;
     background-position: 70%;
   }
 
-  .aboutBlock{
+  .aboutBlock {
     flex-direction: column;
     margin-bottom: 21px;
   }
-  .aboutBlockImg{
+
+  .aboutBlockImg {
     height: auto;
+    max-width: 100%;
   }
 
-  .advantagesWrapper{
+  .advantagesWrapper {
     grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
     gap: 10px;
     margin-bottom: 21px;
@@ -4395,7 +4484,7 @@ css .navbar {
     height: 175px;
   }
 
-  .advantagesInfo{
+  .advantagesInfo {
     height: 96px;
     font-size: 14px;
     align-items: center;
@@ -4405,26 +4494,39 @@ css .navbar {
     justify-content: center;
   }
 
-  .aboutBlockText div:first-child{
-    font-size: 20px;
-  }
-
-  .eventBlock{
-    margin: 0 auto;
-  }
-
-  .contactImg{
+  .language-switcher-item{
     display: none;
   }
 
-  .mapWrapper{
+  .language-switcher-item-mobile .language-switcher-trigger{
+    display: flex;
+  }
+
+  .aboutBlockText {
+    max-width: 100%;
+  }
+
+  .aboutBlockText div:first-child {
+    font-size: 20px;
+  }
+
+  .eventBlock {
+    margin: 0 auto;
+  }
+
+  .contactImg {
+    display: none;
+  }
+
+  .mapWrapper {
     height: 400px;
   }
 
-  .mapWrapper img{
+  .mapWrapper img {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    width: 100%;
   }
 }
 .file\:cursor-pointer::file-selector-button{
@@ -8572,12 +8674,12 @@ css .navbar {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.jsx","import":"Mulish","arguments":[{"subsets":["cyrillic"],"weight":["200","300","400","500","600","700","800","900"],"display":"swap"}],"variableName":"inter"} ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.jsx","import":"Mulish","arguments":[{"subsets":["latin","cyrillic"],"weight":["200","300","400","500","600","700","800","900"],"display":"swap"}],"variableName":"inter"} ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -8586,7 +8688,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -8595,7 +8697,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -8604,7 +8706,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -8613,16 +8715,16 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -8631,7 +8733,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -8640,7 +8742,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -8649,7 +8751,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -8658,16 +8760,16 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8676,7 +8778,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8685,7 +8787,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8694,7 +8796,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8703,16 +8805,16 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -8721,7 +8823,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -8730,7 +8832,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -8739,7 +8841,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -8748,16 +8850,16 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -8766,7 +8868,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -8775,7 +8877,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -8784,7 +8886,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -8793,16 +8895,16 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -8811,7 +8913,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -8820,7 +8922,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -8829,7 +8931,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -8838,16 +8940,16 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -8856,7 +8958,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -8865,7 +8967,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -8874,7 +8976,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -8883,16 +8985,16 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -8901,7 +9003,7 @@ css .navbar {
 }
 /* cyrillic */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -8910,7 +9012,7 @@ css .navbar {
 }
 /* vietnamese */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -8919,7 +9021,7 @@ css .navbar {
 }
 /* latin-ext */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -8928,13 +9030,13 @@ css .navbar {
 }
 /* latin */
 @font-face {
-  font-family: '__Mulish_e5e622';
+  font-family: '__Mulish_b3b874';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(/_next/static/media/d6ea71070c5fcc60-s.woff2) format('woff2');
+  src: url(/_next/static/media/d6ea71070c5fcc60-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}@font-face {font-family: '__Mulish_Fallback_e5e622';src: local("Arial");ascent-override: 96.56%;descent-override: 24.02%;line-gap-override: 0.00%;size-adjust: 104.08%
-}.__className_e5e622 {font-family: '__Mulish_e5e622', '__Mulish_Fallback_e5e622';font-style: normal
+}@font-face {font-family: '__Mulish_Fallback_b3b874';src: local("Arial");ascent-override: 96.56%;descent-override: 24.02%;line-gap-override: 0.00%;size-adjust: 104.08%
+}.__className_b3b874 {font-family: '__Mulish_b3b874', '__Mulish_Fallback_b3b874';font-style: normal
 }
 

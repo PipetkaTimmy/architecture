@@ -1,12 +1,24 @@
-'use client'
-import EventBlock from '@/components/EventBlock'
+'use client';
+import EventBlock from '@/components/EventBlock';
 import React, { useState, useEffect } from 'react';
-import { Button } from '@heroui/react'
+import { Button } from '@heroui/react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import loadTranslations from '@/utils/getTranslations';
 
 const page = () => {
   const [events, setEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const { language } = useLanguage();
+  const [translations, setTranslations] = useState({});
+
+  useEffect(() => {
+    const fetchTranslations = async () => {
+      const trans = await loadTranslations('News', language);
+      setTranslations(trans);
+    };
+    fetchTranslations();
+  }, [language]);
 
   const fetchEvents = async (page) => {
     try {
@@ -23,26 +35,25 @@ const page = () => {
 
   useEffect(() => {
     fetchEvents(currentPage);
-  }, []);
+  }, [currentPage]);
 
   const loadMore = () => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
-    fetchEvents(nextPage);
   };
 
   return (
     <section className="containerCustom p-21">
-      <h2 className="sectionTitle">Лента событий</h2>
+      <h2 className="sectionTitle">{translations.News?.title || 'Лента событий'}</h2>
       <div className="events">
         {events.map((event) => (
           <EventBlock
             key={event.id}
             id={event.id}
-            title={event.title}
-            subtitle={event.subtitle}
+            title={event[`title_${language}`] || event.title}
+            subtitle={event[`subtitle_${language}`] || event.subtitle}
             image={event.image}
-            date={new Date(event.created_at).toLocaleDateString('ru-RU', {
+            date={new Date(event.created_at).toLocaleDateString(`${language}-KZ`, {
               day: 'numeric',
               month: 'long',
               year: 'numeric',
@@ -52,11 +63,11 @@ const page = () => {
       </div>
       {hasMore && (
         <Button className="eventsMore" onClick={loadMore}>
-          Посмотреть все новости
+          {translations.News?.moreButton || 'Посмотреть все новости'}
         </Button>
       )}
     </section>
-  )
-}
+  );
+};
 
-export default page
+export default page;

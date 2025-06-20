@@ -3,14 +3,13 @@ import "./globals.css";
 import { HeroUIProvider } from "@heroui/react";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Mulish({
-  subsets: ["latin"],
-  subsets: ['cyrillic'],
-  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
-  display: 'swap',
+  subsets: ["latin", "cyrillic"], // Указываем оба подмножества
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
-
 
 export const metadata = {
   title: "Create Next App",
@@ -19,12 +18,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="ru"> {/* Установим lang по умолчанию, позже сделаем динамическим */}
+      <body className={inter.className}>
         <HeroUIProvider>
-          <Navbar/>
-          {children}
-          <Footer/>
+          <LanguageProvider> {/* Оборачиваем в LanguageProvider */}
+            <Navbar />
+            {children}
+            <Footer />
+          </LanguageProvider>
         </HeroUIProvider>
       </body>
     </html>
