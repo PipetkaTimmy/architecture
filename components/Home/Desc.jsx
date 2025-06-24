@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { Button } from '@heroui/react';
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -20,9 +21,11 @@ const Desc = () => {
     <div className='descComponent'>
       <h1>{translations.Desc?.title || 'Недвижимость — теперь по силам каждому'}</h1>
       <h2>{translations.Desc?.subtitle || 'Вступай в пай. Стань совладельцем. Живи или зарабатывай — выбор за тобой.'}</h2>
-      <Button className='lightBtn'>
-        {translations.Desc?.button || 'Узнать подробнее'}
-      </Button>
+      <Link href="/about">
+        <Button className='lightBtn'>
+          {translations.Desc?.button || 'Узнать подробнее'}
+        </Button>
+      </Link>
     </div>
   );
 };

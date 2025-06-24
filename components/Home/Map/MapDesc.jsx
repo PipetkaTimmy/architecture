@@ -44,14 +44,19 @@ const MapDesc = () => {
           {translations.MapDesc?.contacts || 'Как с нами связаться'}
         </div>
         <div className='mapDescInfoWrapper'>
-          <div className='mapDescInfo'>
-            <img src="/iconItems/whatsapp.png" alt="" />
+          <a
+            href="https://wa.me/77751136940"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='mapDescInfo'
+          >
+            <img src="/iconItems/whatsapp.png" alt="WhatsApp" />
             <span>{translations.MapDesc?.contactInfo?.whatsapp || '+7 775 113 6940'}</span>
-          </div>
-          <div className='mapDescInfo'>
-            <img src="/iconItems/phone.png" alt="" />
+          </a>
+          <a href="tel:+77719499185" className='mapDescInfo'>
+            <img src="/iconItems/phone.png" alt="Phone" />
             <span>{translations.MapDesc?.contactInfo?.phone || '+7 771 949 9185'}</span>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -60,16 +65,27 @@ const MapDesc = () => {
           {translations.MapDesc?.social || 'Социальные сети'}
         </div>
         <div className='mapDescInfoWrapper'>
-          <div className='mapDescInfo'>
-            <img src="/iconItems/inst.png" alt="" />
+          <a
+            href="https://www.instagram.com/ubw.kz.official?igsh=NnZjYm8zc3kydXZ4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='mapDescInfo'
+          >
+            <img src="/iconItems/inst.png" alt="Instagram" />
             <span>{translations.MapDesc?.socialLinks?.instagram || 'Instagram'}</span>
-          </div>
-          <div className='mapDescInfo'>
-            <img src="/iconItems/tiktoc.png" alt="" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@ubw.kz?_t=ZM-8wVm6ut4oq8&_r=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='mapDescInfo'
+          >
+            <img src="/iconItems/tiktoc.png" alt="TikTok" />
             <span>{translations.MapDesc?.socialLinks?.tiktok || 'Tik-Tok'}</span>
-          </div>
+          </a>
         </div>
       </div>
+
     </div>
   );
 };

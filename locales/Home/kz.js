@@ -32,6 +32,17 @@ const kz = {
   EventFeed: {
     title: "Оқиғалар лентасы",
     moreButton: "Барлық жаңалықтарды қарау"
+  },
+  Counter: {
+    boughtHomes: "Тұрғын үй сатып алды",
+    cooperativeMembers: "Кооператив мүшелері",
+    inQueue: "Кезекте",
+    error: "Деректерді жүктеу мүмкін болмады",
+    errorLabel: "Қате",
+    loading: "Жүктелуде...",
+  },
+  EventBlock: {
+    readMore: "Толығырақ оқу",
   }
 };
 

@@ -50,8 +50,10 @@ const page = () => {
           <EventBlock
             key={event.id}
             id={event.id}
-            title={event[`title_${language}`] || event.title}
-            subtitle={event[`subtitle_${language}`] || event.subtitle}
+            title_ru={event.title_ru}
+            title_kz={event.title_kz}
+            subtitle_ru={event.subtitle_ru}
+            subtitle_kz={event.subtitle_kz}
             image={event.image}
             date={new Date(event.created_at).toLocaleDateString(`${language}-KZ`, {
               day: 'numeric',

@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import FooterNews from './FooterNews';
 import CopyRight from './CopyRight';
@@ -31,14 +32,10 @@ const Footer = () => {
           <div className="footerText">
             <h2>{translations.Footer?.navigation.title || 'Навигация'}</h2>
             <ul>
-              {(translations.Footer?.navigation.items || [
-                'Главная',
-                'О Кооперативе',
-                'Новости',
-                'Вопросы и ответы',
-                'Контакты',
-              ]).map((item, index) => (
-                <li key={index}>{item}</li>
+              {(translations.Footer?.navigation.items || []).map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href}>{item.label}</Link>
+                </li>
               ))}
             </ul>
           </div>

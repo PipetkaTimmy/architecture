@@ -7,7 +7,13 @@ const ru = {
     },
     navigation: {
       title: "Навигация",
-      items: ["Главная", "О Кооперативе", "Новости", "Вопросы и ответы", "Контакты"],
+      items: [
+        { label: "Главная", href: "/" },
+        { label: "О Кооперативе", href: "/about" },
+        { label: "Новости", href: "/news" },
+        { label: "Вопросы и ответы", href: "/faq" },
+        { label: "Контакты", href: "/contacts" },
+      ],
     },
     schedule: {
       title: "График",

@@ -3668,8 +3668,12 @@ body {
   border-radius: 8px;
   padding: 20px 16px;
   width: 100%;
-  max-width: 285px;
   height: 100%;
+}
+
+.eventsWrapper {
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .mapDescInfo img {
@@ -3806,7 +3810,7 @@ footer ul {
   color: #AAAAAA;
 }
 
-.langText{
+.langText {
   display: flex;
   gap: 8px;
 }
@@ -3995,7 +3999,7 @@ footer ul {
   overflow: hidden;
 }
 
-.language-switcher-item-mobile .language-switcher-trigger{
+.language-switcher-item-mobile .language-switcher-trigger {
   display: none;
   align-items: center;
   gap: 8px;
@@ -4052,6 +4056,7 @@ footer ul {
   grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
   gap: 20px;
 
+
 }
 
 .contactBlock {
@@ -4064,6 +4069,7 @@ footer ul {
   flex-direction: column;
   padding: 10px;
   justify-content: space-between;
+  height: 100%;
 }
 
 .contactBlock span:last-child {
@@ -4494,11 +4500,11 @@ css .navbar {
     justify-content: center;
   }
 
-  .language-switcher-item{
+  .language-switcher-item {
     display: none;
   }
 
-  .language-switcher-item-mobile .language-switcher-trigger{
+  .language-switcher-item-mobile .language-switcher-trigger {
     display: flex;
   }
 
@@ -4527,6 +4533,23 @@ css .navbar {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
+  }
+
+  .eventDisc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    color: #23232380;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 48px;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+    width: 100%;
+    max-width: 326px;
+    white-space: pre-wrap;
   }
 }
 .file\:cursor-pointer::file-selector-button{

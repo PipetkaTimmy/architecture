@@ -141,13 +141,27 @@ const ContactPage = () => {
           { title: 'Номер телефона', value: '+77719499185' },
           { title: 'WhatsApp', value: '+7 775 113 6940' },
           { title: 'Адрес офиса', value: 'г. Астана, ​БЦ Нұр Тау, Проспект Республики, 34а, офис 609 и 610; 6 этаж' },
-        ]).map((contact, index) => (
-          <div key={index} className="contactBlock">
-            <span>{contact.title}</span>
-            <span className={contact.title === 'Адрес офиса' ? 'adress' : 'adress'}>{contact.value}</span>
-          </div>
-        ))}
+        ]).map((contact, index) => {
+          const isEmail = contact.title === 'Электронная почта';
+          const href = isEmail ? `mailto:${contact.value}` : undefined;
+
+          const innerContent = (
+            <div className="contactBlock">
+              <span>{contact.title}</span>
+              <span className="adress">{contact.value}</span>
+            </div>
+          );
+
+          return isEmail ? (
+            <a href={href} key={index} className="contactLink">
+              {innerContent}
+            </a>
+          ) : (
+            <div key={index}>{innerContent}</div>
+          );
+        })}
       </div>
+
     </section>
   );
 };

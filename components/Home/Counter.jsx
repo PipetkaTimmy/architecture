@@ -35,18 +35,35 @@ const Counter = () => {
   }, [translations]);
 
   if (error) {
-    return <div className="counterComponent">{translations.Counter?.errorLabel || 'Ошибка'}: {error}</div>;
+    return (
+      <div className="counterComponent">
+        {translations.Counter?.errorLabel || 'Ошибка'}: {error}
+      </div>
+    );
   }
+
+  // Находим блоки по ключам
+  const boughtHomesBlock = blocks.find((block) => block.key === 'block2.buyed_home') || {};
+  const cooperativeMembersBlock = blocks.find((block) => block.key === 'block2.corp_users') || {};
+  const inQueueBlock = blocks.find((block) => block.key === 'block2.in_queue') || {};
 
   return (
     <div className="counterComponent">
       {blocks.length > 0 ? (
-        blocks.map((block) => (
-          <div key={block.id} className="blackGlassBlock">
-            <span>{block.text_ru}+</span> {/* Если есть text_kz, можно добавить условие */}
-            <span>{block.label}</span>
+        <>
+          <div className="blackGlassBlock">
+            <span>{(language === 'kz' ? boughtHomesBlock.text_kz : boughtHomesBlock.text_ru) || '0'}+</span>
+            <span>{translations.Counter?.boughtHomes || 'Приобрели жилье'}</span>
           </div>
-        ))
+          <div className="blackGlassBlock">
+            <span>{(language === 'kz' ? cooperativeMembersBlock.text_kz : cooperativeMembersBlock.text_ru) || '0'}+</span>
+            <span>{translations.Counter?.cooperativeMembers || 'Членов кооператива'}</span>
+          </div>
+          <div className="blackGlassBlock">
+            <span>{(language === 'kz' ? inQueueBlock.text_kz : inQueueBlock.text_ru) || '0'}+</span>
+            <span>{translations.Counter?.inQueue || 'В очереди'}</span>
+          </div>
+        </>
       ) : (
         <>
           <div className="blackGlassBlock">

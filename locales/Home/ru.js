@@ -32,6 +32,17 @@ const ru = {
   EventFeed: {
     title: "Лента событий",
     moreButton: "Посмотреть все новости"
+  },
+  Counter: {
+    boughtHomes: "Приобрели жилье",
+    cooperativeMembers: "Членов кооператива",
+    inQueue: "В очереди",
+    error: "Не удалось загрузить данные",
+    errorLabel: "Ошибка",
+    loading: "Загрузка...",
+  },
+  EventBlock: {
+    readMore: "Читать дальше",
   }
 };
 

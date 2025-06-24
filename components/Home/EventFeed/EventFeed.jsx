@@ -41,8 +41,10 @@ const EventFeed = () => {
           <EventBlock
             key={event.id}
             id={event.id}
-            title={event.title} // Если есть title_kz, можно добавить логику
-            subtitle={event.subtitle} // Если есть subtitle_kz, можно добавить логику
+            title_ru={event.title_ru}
+            title_kz={event.title_kz}
+            subtitle_ru={event.subtitle_ru}
+            subtitle_kz={event.subtitle_kz}
             image={event.image}
             date={new Date(event.created_at).toLocaleDateString(`${language}-KZ`, {
               day: 'numeric',
