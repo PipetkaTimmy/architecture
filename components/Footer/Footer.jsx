@@ -48,6 +48,10 @@ const Footer = () => {
                 <p>{translations.Footer?.schedule.workdays.hours || 'с 09:00 до 18:00'}</p>
               </li>
               <li>
+                <b>{translations.Footer?.schedule.breakfast.title || 'Обед'}</b>
+                <p>{translations.Footer?.schedule.breakfast.hours || 'с 13:00 до 14:00'}</p>
+              </li>
+              <li>
                 <b>{translations.Footer?.schedule.weekends.title || 'Выходные дни'}</b>
                 <p>{translations.Footer?.schedule.weekends.days || 'СБ - ВС'}</p>
               </li>

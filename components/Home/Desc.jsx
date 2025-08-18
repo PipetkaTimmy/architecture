@@ -19,8 +19,8 @@ const Desc = () => {
 
   return (
     <div className='descComponent'>
-      <h1>{translations.Desc?.title || 'Недвижимость — теперь по силам каждому'}</h1>
-      <h2>{translations.Desc?.subtitle || 'Вступай в пай. Стань совладельцем. Живи или зарабатывай — выбор за тобой.'}</h2>
+      <h1>{translations.Desc?.title || 'UBW KZ — возможность стать владельцем недвижимости в любом регионе Казахстана, на выгодных условиях'}</h1>
+      {/* <h2>{translations.Desc?.subtitle || 'Вступай в пай. Стань совладельцем. Живи или зарабатывай — выбор за тобой.'}</h2> */}
       <Link href="/about">
         <Button className='lightBtn'>
           {translations.Desc?.button || 'Узнать подробнее'}

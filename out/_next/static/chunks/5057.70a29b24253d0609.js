@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5057],{95057:function(e,t,u){u.r(t),t.default={News:{title:"Лента событий",moreButton:"Посмотреть все новости"},EventBlock:{readMore:"Читать дальше"}}}}]);

@@ -21,7 +21,7 @@ const DescAbout = () => {
     <div className='descComponent'>
       <h1>{translations.DescAbout?.title || 'О нашем потребительском кооперативе'}</h1>
       <h2>{translations.DescAbout?.subtitle || 'Надёжное сообщество членов кооперативов, строящее своё будущее'}</h2>
-      <Link href="https://kz.bww.global/login">
+      <Link href="https://pkubw.kz">
         <Button className='lightBtn'>
           {translations.DescAbout?.button || 'Рассчет стоимости ОН'}
         </Button>

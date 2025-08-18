@@ -78,7 +78,7 @@ const FullNewsPage = () => {
         <Skeleton className="rounded-lg" isLoaded={isLoaded}>
           <div className="newsTitleWrapper">
             <div className="newsTitle">{localizedTitle || 'Загрузка...'}</div>
-            <div className="newsSubtitle">{localizedSubtitle || 'Загрузка...'}</div>
+            <div className="newsSubtitle">{localizedSubtitle || ''}</div>
           </div>
         </Skeleton>
         <Skeleton className="rounded-lg" isLoaded={isLoaded}>

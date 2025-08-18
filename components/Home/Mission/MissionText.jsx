@@ -22,7 +22,6 @@ const MissionText = () => {
           'Социальная миссия Потребительского кооператива «UBW KZ» совпадает с целями государственной политики в обеспечении реализации конституционного права граждан Республики Казахстан на жилье.'}
       </p>
       <div className='missionAutor'>
-        <span>{translations.MissionText?.author?.name || 'Фамилия Имя Отчество'}</span>
         <span>{translations.MissionText?.author?.position || 'Председатель Правления'}</span>
         <span>{translations.MissionText?.author?.company || 'UWB.kz'}</span>
       </div>

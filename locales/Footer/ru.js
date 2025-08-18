@@ -20,7 +20,11 @@ const ru = {
       workdays: {
         title: "Рабочие дни",
         days: "ПН - ПТ",
-        hours: "с 09:00 до 18:00",
+        hours: "с 10:00 до 18:00",
+      },
+      breakfast: {
+        title: "Обед",
+        hours: "с 13:00 до 14:00",
       },
       weekends: {
         title: "Выходные дни",

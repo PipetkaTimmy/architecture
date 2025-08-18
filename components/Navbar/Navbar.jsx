@@ -84,7 +84,7 @@ const Navbar = () => {
             <LanguageSwitcher />
           </li>
           <li>
-            <Link href="https://kz.bww.global/login" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="https://pkubw.kz" onClick={() => setIsMobileMenuOpen(false)}>
               <Button className="profileBtn">
                 <img src="/iconItems/user.png" alt="Profile" />
                 <span>{translations.Navbar?.profile || 'Личный кабинет'}</span>

@@ -23,14 +23,21 @@ const MapDesc = () => {
         </div>
         <div className='mapDescInfoWrapper'>
           <div className='days'>
-            <label>Рабочие дни</label>
+            <label>{translations.MapDesc?.work || 'Рабочие дни'}</label>
             <div className='mapDescInfo'>
               <img src="/iconItems/cal.png" alt="" />
               <span>{translations.MapDesc?.schedule?.weekdays || 'ПН - ПТ с 09:00 по 18:00'}</span>
             </div>
           </div>
           <div className='days'>
-            <label>Выходные</label>
+            <label>{translations.MapDesc?.breakfast || 'Обед'}</label>
+            <div className='mapDescInfo'>
+              <img src="/iconItems/cal.png" alt="" />
+              <span>{translations.MapDesc?.schedule?.break || '13:00 - 14:00'}</span>
+            </div>
+          </div>
+          <div className='days'>
+            <label>{translations.MapDesc?.hollyday || 'Выходные'}</label>
             <div className='mapDescInfo'>
               <img src="/iconItems/cal.png" alt="" />
               <span>{translations.MapDesc?.schedule?.weekends || 'СБ - ВС'}</span>

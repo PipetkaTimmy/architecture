@@ -20,6 +20,9 @@ const MissionDocs = () => {
             <div className='docsImages'>
                 <Button className="imgButton"><img src="/docs/1.png" alt="" onClick={() => handleImageClick('/docs/1.png')} /></Button>
                 <Button className="imgButton"><img src="/docs/2.png" alt="" onClick={() => handleImageClick('/docs/2.png')} /></Button>
+                <Button className="imgButton"><img src="/docs/3.png" alt="" onClick={() => handleImageClick('/docs/3.png')} /></Button>
+                <Button className="imgButton"><img src="/docs/4.png" alt="" onClick={() => handleImageClick('/docs/4.png')} /></Button>
+
             </div>
             <ModalDocs backdrop={backdrop} isOpen={isOpen} onClose={onClose} selectedImage={selectedImage} />
         </div>

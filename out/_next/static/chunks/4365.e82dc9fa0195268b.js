@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4365],{44365:function(e,a,n){n.r(a),a.default={Navbar:{home:"Главная",about:"О кооперативе",news:"Новости",faq:"Вопросы и ответы",contacts:"Контакты",profile:"Личный кабинет",navigation:"Навигация"},Welcome:"Добро пожаловать на наш сайт!"}}}]);

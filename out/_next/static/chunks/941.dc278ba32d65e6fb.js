@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[941],{70941:function(e,a,n){n.r(a),a.default={Navbar:{home:"Басты",about:"Кооператив туралы",news:"Жаңалықтар",faq:"Жиі қойылатын сұрақтар",contacts:"Байланыстар",profile:"Жеке кабинет",navigation:"Навигация"},Welcome:"Біздің веб-сайтқа қош келдіңіз!"}}}]);

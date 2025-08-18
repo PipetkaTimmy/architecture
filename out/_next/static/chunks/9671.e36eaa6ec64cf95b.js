@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9671],{79671:function(a,e,n){n.r(e),e.default={Navbar:{home:"Басты",about:"Кооператив туралы",news:"Жаңалықтар",faq:"Жиі қойылатын сұрақтар",contacts:"Байланыстар",profile:"Жеке кабинет",navigation:"Навигация"}}}}]);
