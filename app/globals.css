@@ -887,6 +887,38 @@ css .navbar {
   /* Оранжевый фон для закрытого меню */
 }
 
+.floatingCta {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background-color: #EF7F18;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(239, 127, 24, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floatingCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(239, 127, 24, 0.45);
+}
+
+@media (max-width: 640px) {
+  .floatingCta {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
 .mobile-menu-button.grey {
   background-color: #e3e3e3;
   /* Серый фон для открытого меню */

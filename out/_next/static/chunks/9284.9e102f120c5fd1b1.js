@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9284],{19284:function(e,t,u){u.r(t),t.default={News:{title:"Оқиғалар лентасы",moreButton:"Барлық жаңалықтарды қарау"},EventBlock:{readMore:"Толығырақ оқу"}}}}]);

@@ -41,6 +41,7 @@ const kz = {
     boughtHomes: "Тұрғын үй сатып алды",
     cooperativeMembers: "Кооператив мүшелері",
     inQueue: "Кезекте",
+    redeemed: "Сатып алынды",
     error: "Деректерді жүктеу мүмкін болмады",
     errorLabel: "Қате",
     loading: "Жүктелуде...",

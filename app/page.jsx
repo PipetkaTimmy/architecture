@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Counter from "@/components/Home/Counter";
 import Desc from "@/components/Home/Desc";
 import EventFeed from "@/components/Home/EventFeed/EventFeed";
@@ -18,6 +19,9 @@ export default function Home() {
         <EventFeed/>
         <Map/>
       </div>
+      <Link href="/contacts" className="floatingCta">
+        Оставить заявку
+      </Link>
     </div>
   );
 }

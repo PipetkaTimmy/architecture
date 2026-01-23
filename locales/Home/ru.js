@@ -41,6 +41,7 @@ const ru = {
     boughtHomes: "Приобрели жилье",
     cooperativeMembers: "Членов кооператива",
     inQueue: "В очереди",
+    redeemed: "Выкупили",
     error: "Не удалось загрузить данные",
     errorLabel: "Ошибка",
     loading: "Загрузка...",

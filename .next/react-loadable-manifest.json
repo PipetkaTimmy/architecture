@@ -1,68 +1,71 @@
 {
   "node_modules\\@heroui\\accordion\\dist\\chunk-F3X3YELH.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\accordion\\dist\\chunk-F3X3YELH.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a0.js"
+      "static/chunks/878-31150d00fddda163.js",
+      "static/chunks/9272.4f33066a0f886a0b.js"
     ]
   },
   "node_modules\\@heroui\\calendar\\dist\\chunk-XPMFI4TR.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\calendar\\dist\\chunk-XPMFI4TR.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a0.js"
+      "static/chunks/9724.dbe087f06c6bd5c0.js"
     ]
   },
   "node_modules\\@heroui\\modal\\dist\\chunk-UKDXCIYN.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\modal\\dist\\chunk-UKDXCIYN.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a1.js"
+      "static/chunks/878-31150d00fddda163.js",
+      "static/chunks/6225.a1ca018c7dcd64bd.js"
     ]
   },
   "node_modules\\@heroui\\navbar\\dist\\chunk-63OA3RRZ.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\navbar\\dist\\chunk-63OA3RRZ.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a0.js"
+      "static/chunks/9724.dbe087f06c6bd5c0.js"
     ]
   },
   "node_modules\\@heroui\\navbar\\dist\\chunk-GGZP2VLD.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\navbar\\dist\\chunk-GGZP2VLD.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a0.js"
+      "static/chunks/9724.dbe087f06c6bd5c0.js"
     ]
   },
   "node_modules\\@heroui\\popover\\dist\\chunk-2PG5BJX6.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\popover\\dist\\chunk-2PG5BJX6.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a0.js"
+      "static/chunks/9724.dbe087f06c6bd5c0.js"
     ]
   },
   "node_modules\\@heroui\\popover\\dist\\chunk-REV5W46G.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\popover\\dist\\chunk-REV5W46G.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a0.js"
+      "static/chunks/9724.dbe087f06c6bd5c0.js"
     ]
   },
   "node_modules\\@heroui\\ripple\\dist\\chunk-QHRCZSEO.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\ripple\\dist\\chunk-QHRCZSEO.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a1.js"
+      "static/chunks/878-31150d00fddda163.js",
+      "static/chunks/6225.a1ca018c7dcd64bd.js"
     ]
   },
   "node_modules\\@heroui\\toast\\dist\\chunk-DUW5SASC.mjs -> framer-motion": {
-    "id": "node_modules\\@heroui\\toast\\dist\\chunk-DUW5SASC.mjs -> framer-motion",
+    "id": 90260,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_framer-motion_dist_es_index_mjs.js"
+      "static/chunks/260.399d0c40878ce1ce.js"
     ]
   },
   "node_modules\\@heroui\\toast\\dist\\chunk-T2MPXQXY.mjs -> ./src-UW24ZMRV.mjs": {
-    "id": "node_modules\\@heroui\\toast\\dist\\chunk-T2MPXQXY.mjs -> ./src-UW24ZMRV.mjs",
+    "id": 30849,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_toast_dist_src-UW24ZMRV_mjs.js"
+      "static/chunks/849.c859aa128e51ebee.js"
     ]
   },
   "node_modules\\@heroui\\tooltip\\dist\\chunk-7ZZXWEXF.mjs -> @heroui/dom-animation": {
-    "id": "node_modules\\@heroui\\tooltip\\dist\\chunk-7ZZXWEXF.mjs -> @heroui/dom-animation",
+    "id": 79272,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_heroui_dom-animation_dist_index_mjs-_383a0.js"
+      "static/chunks/9724.dbe087f06c6bd5c0.js"
     ]
   }
 }
